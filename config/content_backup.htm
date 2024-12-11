@@ -176,6 +176,141 @@ grid(10, 10, 20)
 draw_filled_circle(radius, cx, cy)
 </pre>
 <p></p>
+<!-- 導入 brython 程式庫 -->
+<p>
+<script src="/get_page/cmsimde/static/brython.js"></script>
+<script src="/get_page/cmsimde/static/brython_stdlib.js"></script>
+</p>
+<!-- 啟動 Brython -->
+<p>
+<script>
+window.onload=function(){
+brython({debug:1, pythonpath:['./../cmsimde/static/','./../downloads/py/']});
+}
+</script>
+</p>
+<div id="brython_div1"></div>
+<p>
+<script type="text/python3">
+from browser import html
+from browser import document as doc
+import math
+ 
+# Create canvas element
+canvas = html.CANVAS(width=400, height=400)
+brython_div = doc["brython_div1"]
+brython_div <= canvas
+ 
+# Each grid square's pixel size
+gs = 20
+radius = 5  # Set the radius of the circle
+cx, cy = 5, 5  # Set the center of the circle (in grid coordinates)
+ 
+# Get the drawing context
+ctx = canvas.getContext("2d")
+ 
+def dRect(lux, luy, w, h, s=1, c='#ff0000'):
+    ctx.lineWidth = s
+    ctx.strokeStyle = c
+    ctx.beginPath()
+    ctx.rect(lux, luy, w, h)
+    ctx.stroke()
+ 
+def grid(width, height, grid_pix):
+    # Create grid with width x height number of grid cells
+    for i in range(width):
+        for j in range(height):
+            dRect(i * grid_pix, j * grid_pix, grid_pix, grid_pix, 1, "lightgrey")
+ 
+def fill(x, y, color):
+    # Fill the grid cell with the specified color
+    ctx.fillStyle = color
+    ctx.fillRect(x - 1, y - 1, gs, gs)
+ 
+def draw_filled_circle(radius, cx, cy):
+    # Create a filled circle using grid squares
+    for i in range(10):  # Iterate over the grid width (10 squares)
+        for j in range(10):  # Iterate over the grid height (10 squares)
+            # Calculate the center of the current grid square
+            center_x = i + 0.5
+            center_y = j + 0.5
+            # Check if this grid square falls inside the circle
+            if (center_x - cx) ** 2 + (center_y - cy) ** 2 <= radius ** 2:
+                fill(i * gs, j * gs, "black")  # Fill with black
+ 
+# Draw the grid
+grid(10, 10, 20)
+ 
+# Draw a filled circle at the center (cx, cy) with the specified radius
+draw_filled_circle(radius, cx, cy)
+</script>
+</p>
+<!-- 導入 brython 程式庫 -->
+<p>
+<script src="/get_page/cmsimde/static/brython.js"></script>
+<script src="/get_page/cmsimde/static/brython_stdlib.js"></script>
+</p>
+<!-- 啟動 Brython -->
+<p>
+<script>
+window.onload=function(){
+brython({debug:1, pythonpath:['./../cmsimde/static/','./../downloads/py/']});
+}
+</script>
+<script type="text/python3">
+from browser import html
+from browser import document as doc
+import math
+ 
+# Create canvas element
+canvas = html.CANVAS(width=400, height=400)
+brython_div = doc["brython_div1"]
+brython_div <= canvas
+ 
+# Each grid square's pixel size
+gs = 20
+radius = 5  # Set the radius of the circle
+cx, cy = 5, 5  # Set the center of the circle (in grid coordinates)
+ 
+# Get the drawing context
+ctx = canvas.getContext("2d")
+ 
+def dRect(lux, luy, w, h, s=1, c='#ff0000'):
+    ctx.lineWidth = s
+    ctx.strokeStyle = c
+    ctx.beginPath()
+    ctx.rect(lux, luy, w, h)
+    ctx.stroke()
+ 
+def grid(width, height, grid_pix):
+    # Create grid with width x height number of grid cells
+    for i in range(width):
+        for j in range(height):
+            dRect(i * grid_pix, j * grid_pix, grid_pix, grid_pix, 1, "lightgrey")
+ 
+def fill(x, y, color):
+    # Fill the grid cell with the specified color
+    ctx.fillStyle = color
+    ctx.fillRect(x - 1, y - 1, gs, gs)
+ 
+def draw_filled_circle(radius, cx, cy):
+    # Create a filled circle using grid squares
+    for i in range(10):  # Iterate over the grid width (10 squares)
+        for j in range(10):  # Iterate over the grid height (10 squares)
+            # Calculate the center of the current grid square
+            center_x = i + 0.5
+            center_y = j + 0.5
+            # Check if this grid square falls inside the circle
+            if (center_x - cx) ** 2 + (center_y - cy) ** 2 <= radius ** 2:
+                fill(i * gs, j * gs, "black")  # Fill with black
+ 
+# Draw the grid
+grid(10, 10, 20)
+ 
+# Draw a filled circle at the center (cx, cy) with the specified radius
+draw_filled_circle(radius, cx, cy)
+</script>
+</p>
 <p>3. 完成上列題目後, 請利用 Youtube 影片<span>簡報</span>個人的解題過程與心得.</p>
 <p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" frameborder="0" height="533" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/s-tNmr_H71s" title="w11 41323143 一二題" width="1519"></iframe></p><h3>w12_hw</h3>
 <p style="text-align: left;">1. 請各組組員分別利用<span> </span><span>Brython 以及 Jupyter lab</span><span> </span>環境, 執行<a href="http://229.cycu.org/python_2025_lite.7z">可攜程式</a><span> </span>notebook 目錄中的<span> </span><span>01_string_input_print.ipynb 至 10_for_search.ipynb</span><span> </span>筆記本程式, 完成後請將能在 Brython 執行的程式碼存入個人<span> </span><span>Gist</span><span> </span>後, 將各程式執行連結放入 w12_hw 網頁上. 最後請說明各範例中所使用的程式語法以及執行心得.</p>
@@ -255,14 +390,12 @@ else:
     print(shopping_list)  # 顯示未變動的清單
 </pre>
 <p></p>
-<p></p>
-<h3>w13_hw</h3>
+<p></p><h3>w13_hw</h3>
 <!-- 導入 brython 程式庫 -->
 <p>
 <script src="/static/brython.js"></script>
 <script src="/static/brython_stdlib.js"></script>
 </p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"><!-- 啟動 Brython --></pre>
 <p>
 <script>
 window.onload=function(){
@@ -271,23 +404,43 @@ brython({debug:1, pythonpath:['/static/','./../downloads/py/']});
 </script>
 </p>
 <div id="brython_div1"></div>
-<script type="text/python">
+<script type="text/python3">
 from browser import html
 from browser import document as doc
 
 # 利用 html 建立 canvas 超文件物件
-canvas = html.CANVAS(width=400, height=400)
+canvas = html.CANVAS(width=600, height=600)  # 調整畫布大小以容納圓形
 brython_div = doc["brython_div1"]
 brython_div <= canvas
 
 ctx = canvas.getContext("2d")
 ctx.lineWidth = 1
 
-# 繪製對角線，顏色設定為藍色
+# 1. 繪製兩個矩形 (紅色邊框)
+ctx.strokeStyle = 'red'  # 設定矩形的邊框顏色為紅色
+ctx.beginPath()
+ctx.rect(100, 100, 200, 200)  # 第一個正方形的左上角在(100, 100)，邊長200
+ctx.rect(200, 200, 200, 200)  # 第二個正方形的左上角在(200, 200)，邊長200
+ctx.stroke()
+
+# 2. 繪製對角線 (藍色) - 只連接第一個矩形的左上角和第一個矩形的右下角
 ctx.strokeStyle = 'blue'  # 設定對角線顏色為藍色
-ctx.beginPath() 
-ctx.moveTo(10, 10)
-ctx.lineTo(210, 210)
+ctx.beginPath()
+ctx.moveTo(100, 100)  # 起點為第一個矩形的左上角 (100, 100)
+ctx.lineTo(300, 300)  # 終點為第一個矩形的右下角 (300, 300)
+ctx.stroke()
+
+# 3. 繪製兩個外切圓 (黑色)
+ctx.strokeStyle = 'black'  # 設定圓的顏色為黑色
+
+# 第一個矩形的外切圓
+ctx.beginPath()
+ctx.arc(200, 200, 141.4, 0, 2 * 3.14)  # 圓心在(200, 200)，半徑為141.4（sqrt(2) * 邊長的一半）
+ctx.stroke()
+
+# 第二個矩形的外切圓
+ctx.beginPath()
+ctx.arc(300, 300, 141.4, 0, 2 * 3.14)  # 圓心在(300, 300)，半徑為141.4
 ctx.stroke()
 </script><h1>HW 2</h1>
 <h4>主題: Python 的數列、判斷式與重複迴圈 (20%)<span style="background-color: #ffff99;"><br/></span></h4>
