@@ -581,29 +581,39 @@ draw_circles(x1, y1, r1, x2, y2, r2, x3, y3, r3)
 </pre>
 <p></p>
 <h3>w15</h3>
-<p>題目一: 請利用 Gist 與 Brython 程式環境, 在個人的課程網站中新增一個頁面, 標題為 w15, 以"<a href="https://mdecp2024.github.io/hw-41323143/content/Brython.html?src=https://gist.githubusercontent.com/41323143/10199968200fdf7336cf25221b4ef405/raw/3c69469980eacd97ab98756fecd834dd296b5e94/hw1.py">從 1 累加到 100</a>"作為 anchor 的連結標題, 使用者點擊該連結之後, 可從各自的 Brython 頁面執行程式.</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># sum 初始值設為 0
-# sum 為全域變數
+<p>題目一: 請利用 Gist 與 Brython 程式環境, 在個人的課程網站中新增一個頁面, 標題為 w15, 以"<a href="https://mdecp2024.github.io/hw-41323143/content/Brython.html?src=https://gist.githubusercontent.com/41323143/10199968200fdf7336cf25221b4ef405/raw/13e75124455a05c651e0b9e0215d2917fcbb5c9d/hw1.py">從 1 累加到 100</a>"作為 anchor 的連結標題, 使用者點擊該連結之後, 可從各自的 Brython 頁面執行程式.</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># 初始化變數 sum 為 0，用來儲存累加的結果
 sum = 0
 
-def addto(init, upto):
-    sum = 0
-    #global sum
-    #init = 1
-    #upto = 100
-    # 利用 for 重複迴圈與變數加法進行累加
-    for i in range(init, upto+1):
-        sum = sum + i
-    
-    print("從" + str(init) + "累加到" + str(upto) + "=" + str(sum))
-    
-    return sum
+# 使用 for 迴圈，從 0 到 100（包含 100）逐一遍歷
+# range(0, 101) 代表數字序列從 0 到 100
+for i in range(0, 101):
+    # 將目前的數字 i 累加到 sum
+    sum += i
 
-#addto(1, 100)
-init, upto = 1, 100
-sum1_50 = addto(init, 50)
-sum51_100 = addto(51, upto)
-print("從" + str(init) + "累加到" + str(upto) + "=" + str(sum1_50 + sum51_100))</pre>
+# 將累加結果輸出到畫面
+print(sum)</pre>
+<p><span>題目二: 延伸上題, 設計一個函式 <a href="https://mdecp2024.github.io/hw-41323143/content/Brython.html?src=https://gist.githubusercontent.com/41323143/10199968200fdf7336cf25221b4ef405/raw/1784b3c9cf36f86b7a434352607bded7eef6e24b/hw2.py">addto</a>(1, 100), 可以完成上述的累加結果. (以"addto"作為連結標題)</span></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def addto(start, end):
+    """
+    計算從 start 到 end 之間所有整數的總和。
+    
+    參數：
+    start: 開始的整數
+    end: 結束的整數（包含在內）
+
+    返回：
+    整數總和
+    """
+    sum = 0  # 初始化總和為 0
+    for i in range(start, end + 1):  # 從 start 累加到 end，包含 end
+        sum += i  # 將當前數字加入總和
+    return sum  # 返回計算的總和
+
+# 測試函式
+result = addto(1, 100)  # 計算 1 到 100 的總和
+print(result)  # 輸出結果</pre>
+<p><span></span></p>
 <p></p><h1>HW 2</h1>
 <h4>主題: Python 的數列、判斷式與重複迴圈 (20%)<span style="background-color: #ffff99;"><br/></span></h4>
 <p style="padding-left: 30px;">Python 課程教材: <a href="https://www.learnpythonwithjupyter.com/">https://www.learnpythonwithjupyter.com/</a> - PART 2 and Part 3</p>
