@@ -459,7 +459,129 @@ ctx.stroke()
 </script>
 </p>
 <h3>w14_ex</h3>
-<h1>HW 2</h1>
+<p>請根據兩個圓繪圖所圍成的區域(目前圍成三個區域, 但若圓心移動可能彼此獨立)進行不同顏色著色, 條件是當各圓半徑與圓心座標變動時, 程式只需輸入兩個圓的圓心座標與半徑, 就可以完成各區域的著色任務.</p>
+<p><span>修改為<a href="https://mdecp2024.github.io/hw-41323143/content/Brython.html?src=https://gist.githubusercontent.com/41323143/2a118e95e7bb3eb8d5cac456b67880c9/raw/496255bb1c00650e1b512a668a6fc1969dfd4b31/W14_ex.py">三個圓的區域塗色任務</a></span></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from browser import html
+from browser import document as doc
+import random
+import math
+
+# 定義一個函式來初始化畫布
+def initialize_canvas(canvas_width=400, canvas_height=400, id="brython_div1"):
+    """
+    初始化畫布，創建一個指定大小的 Canvas 元素，並將其加到 HTML 文件中。
+    返回畫布元素和它的 2D 繪圖上下文。
+    """
+    # 創建畫布元素並設置大小
+    canvas = html.CANVAS(width=canvas_width, height=canvas_height)
+    # 獲取指定 id 的 div 元素，並將畫布添加進去
+    brython_div = doc[id]
+    brython_div &lt;= canvas
+
+    # 返回 2D 繪圖上下文
+    ctx = canvas.getContext("2d")
+    return canvas, ctx
+
+# 定義一個隨機顏色生成函式
+def random_color_generator():
+    """
+    生成一個隨機的 RGB 顏色字符串。
+    返回的顏色是 "rgb(r, g, b)" 格式，其中 r, g, b 是 0 到 255 之間的隨機整數。
+    """
+    # 隨機生成 RGB 三個分量
+    r = random.randint(0, 255)
+    g = random.randint(0, 255)
+    b = random.randint(0, 255)
+    return f"rgb({r}, {g}, {b})"
+
+# 判斷點 (px, py) 是否在圓內
+def is_point_in_circle(px, py, cx, cy, r):
+    """
+    判斷一個點是否位於指定圓內。
+    px, py: 點的座標
+    cx, cy: 圓心座標
+    r: 圓的半徑
+    """
+    return (px - cx) ** 2 + (py - cy) ** 2 &lt;= r ** 2
+
+# 三個圓的區域塗色函式
+def draw_circles(x1, y1, r1, x2, y2, r2, x3, y3, r3):
+    """
+    繪製三個圓及其交集區域，使用不同顏色區分。
+    x1, y1, r1: 第一個圓的圓心和半徑
+    x2, y2, r2: 第二個圓的圓心和半徑
+    x3, y3, r3: 第三個圓的圓心和半徑
+    """
+    # 初始化畫布
+    canvas, ctx = initialize_canvas(400, 400)
+    # 清空畫布
+    ctx.clearRect(0, 0, canvas.width, canvas.height)
+    # 用於存儲不同區域顏色的字典
+    color_dict = {}
+
+    # 逐行掃描每個像素
+    for py in range(0, canvas.height):
+        for px in range(0, canvas.width):
+            # 判斷該點是否在每個圓內
+            in_circle1 = is_point_in_circle(px, py, x1, y1, r1)
+            in_circle2 = is_point_in_circle(px, py, x2, y2, r2)
+            in_circle3 = is_point_in_circle(px, py, x3, y3, r3)
+
+            # 根據點的狀態選擇顏色
+            if in_circle1 and in_circle2 and in_circle3:
+                if "intersection_all" not in color_dict:
+                    color_dict["intersection_all"] = random_color_generator()
+                current_color = color_dict["intersection_all"]
+            elif in_circle1 and in_circle2:
+                if "intersection_12" not in color_dict:
+                    color_dict["intersection_12"] = random_color_generator()
+                current_color = color_dict["intersection_12"]
+            elif in_circle1 and in_circle3:
+                if "intersection_13" not in color_dict:
+                    color_dict["intersection_13"] = random_color_generator()
+                current_color = color_dict["intersection_13"]
+            elif in_circle2 and in_circle3:
+                if "intersection_23" not in color_dict:
+                    color_dict["intersection_23"] = random_color_generator()
+                current_color = color_dict["intersection_23"]
+            elif in_circle1:
+                if "circle1" not in color_dict:
+                    color_dict["circle1"] = random_color_generator()
+                current_color = color_dict["circle1"]
+            elif in_circle2:
+                if "circle2" not in color_dict:
+                    color_dict["circle2"] = random_color_generator()
+                current_color = color_dict["circle2"]
+            elif in_circle3:
+                if "circle3" not in color_dict:
+                    color_dict["circle3"] = random_color_generator()
+                current_color = color_dict["circle3"]
+            else:
+                current_color = "white"
+
+            # 塗色當前像素
+            ctx.fillStyle = current_color
+            ctx.fillRect(px, py, 1, 1)
+
+# 從使用者輸入獲取三個圓的圓心和半徑
+def get_circle_input():
+    """
+    提示使用者輸入三個圓的圓心座標和半徑。
+    返回三個圓的參數。
+    """
+    print("請輸入三個圓的圓心座標和半徑：")
+    x1, y1, r1 = map(int, input("輸入圓1 (x y r)：").split())
+    x2, y2, r2 = map(int, input("輸入圓2 (x y r)：").split())
+    x3, y3, r3 = map(int, input("輸入圓3 (x y r)：").split())
+    return x1, y1, r1, x2, y2, r2, x3, y3, r3
+
+# 主程式開始，從使用者輸入獲取圓的參數，並進行繪製
+x1, y1, r1, x2, y2, r2, x3, y3, r3 = get_circle_input()
+draw_circles(x1, y1, r1, x2, y2, r2, x3, y3, r3)
+</pre>
+<p></p>
+<h3>w15</h3>
+<p>題目一: 請利用 Gist 與 Brython 程式環境, 在個人的課程網站中新增一個頁面, 標題為 w15, 以"<a href="https://mdecp2024.github.io/hw-41323143/content/Brython.html?src=https://gist.githubusercontent.com/41323143/10199968200fdf7336cf25221b4ef405/raw/3c69469980eacd97ab98756fecd834dd296b5e94/hw1.py">從 1 累加到 100</a>"作為 anchor 的連結標題, 使用者點擊該連結之後, 可從各自的 Brython 頁面執行程式.</p><h1>HW 2</h1>
 <h4>主題: Python 的數列、判斷式與重複迴圈 (20%)<span style="background-color: #ffff99;"><br/></span></h4>
 <p style="padding-left: 30px;">Python 課程教材: <a href="https://www.learnpythonwithjupyter.com/">https://www.learnpythonwithjupyter.com/</a> - PART 2 and Part 3</p>
 <hr/>
