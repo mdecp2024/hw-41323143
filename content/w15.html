@@ -154,7 +154,7 @@ for i in range(0, 101):
 
 # 將累加結果輸出到畫面
 print(sum)</pre>
-<p><span>題目二: 延伸上題, 設計一個函式 <a href="https://mdecp2024.github.io/hw-41323143/content/Brython.html?src=https://gist.githubusercontent.com/41323143/10199968200fdf7336cf25221b4ef405/raw/1784b3c9cf36f86b7a434352607bded7eef6e24b/hw2.py">addto</a>(1, 100), 可以完成上述的累加結果. (以"addto"作為連結標題)</span></p>
+<p><span>題目二: 延伸上題, 設計一個函式 <a href="https://mdecp2024.github.io/hw-41323143/content/Brython.html?src=https://gist.githubusercontent.com/41323143/10199968200fdf7336cf25221b4ef405/raw/1784b3c9cf36f86b7a434352607bded7eef6e24b/hw2.py">addto</a>(1, 100), 可以完成上述的累加結果. </span></p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def addto(start, end):
     """
     計算從 start 到 end 之間所有整數的總和。
@@ -174,7 +174,22 @@ print(sum)</pre>
 # 測試函式
 result = addto(1, 100)  # 計算 1 到 100 的總和
 print(result)  # 輸出結果</pre>
-<p><span></span></p>
+<p><span>題目三: 延伸上題, 設計一個函式 <a href="https://mdecp2024.github.io/hw-41323143/content/Brython.html?src=https://gist.githubusercontent.com/41323143/10199968200fdf7336cf25221b4ef405/raw/e305de96473724c259e2669ae4cc4261b31efefe/hw3.py">add_only_even</a>(1, 100), 可以完成從第一個輸入整數, 累加到第二個輸入變數的累加結果, 但只納入偶數. 頁面中請以 add_only_even 作為連結標題.</span></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def add_only_even(start, end):
+    # 初始化變數 sum 為 0，用來儲存偶數的累加結果
+    sum = 0
+    
+    # 使用 for 迴圈，從 start 到 end（包含 end），逐一遍歷
+    for i in range(start, end + 1):
+        # 檢查 i 是否為偶數
+        if i % 1 == 0:
+            # 如果是偶數，就將其加到 sum
+            sum += i
+            # 輸出目前的累加結果
+            print(f"{sum}")
+
+# 範例：從 0 到 100 累加偶數
+add_only_even(0, 100)</pre>
 <p></p><br />w14_ex << <a href='w14_ex.html'>Previous</a> <a href='HW 2.html'>Next</a> >> HW 2</div>
         
     <!-- footer -->
