@@ -141,80 +141,234 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">w14_ex << <a href='w14_ex.html'>Previous</a> <a href='HW 2.html'>Next</a> >> HW 2<br /><h1>w15</h1>
-<p>題目一: 請利用 Gist 與 Brython 程式環境, 在個人的課程網站中新增一個頁面, 標題為 w15, 以"<a href="https://mdecp2024.github.io/hw-41323143/content/Brython.html?src=https://gist.githubusercontent.com/41323143/10199968200fdf7336cf25221b4ef405/raw/13e75124455a05c651e0b9e0215d2917fcbb5c9d/hw1.py">從 1 累加到 100</a>"作為 anchor 的連結標題, 使用者點擊該連結之後, 可從各自的 Brython 頁面執行程式.</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># 初始化變數 sum 為 0，用來儲存累加的結果
-sum = 0
+    <div id="tipue_search_content">HW 4 Exam << <a href='HW 4 Exam.html'>Previous</a> <a href='Final Report.html'>Next</a> >> Final Report<br /><h1>w16_exam3</h1>
+<p><span>題目一: 請以</span><span>自己的學號最後四碼</span><span>作為下列繪圖的左上方點座標, (例如: 若學號最後四碼為 3932, 請將 (39, 32) 作為繪圖左上方點座標), 並以紅色文字標示出該點座標 (例如: (39, 32)), 之後請利用 </span><span>pixel=2 的黑色直線</span><span>, </span><span>自訂迷宮畫布大小</span><span>, 直接在頁面畫出下列圖像, 並且</span><span>利用紅色連續線段標示從上方入口, 走至下方出口的路線圖</span><span>.</span></p>
+<p><a href="https://mdecp2024.github.io/hw-41323143/content/Brython.html?src=https://gist.githubusercontent.com/41323143/f13368bef594ea33da6fdde9a321a59a/raw/341e4559dfa8bb7f84555378492f4dcf467fb944/w16-3.py">w16_exam3</a></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from browser import html
+from browser import document as doc
 
-# 使用 for 迴圈，從 0 到 100（包含 100）逐一遍歷
-# range(0, 101) 代表數字序列從 0 到 100
-for i in range(0, 101):
-    # 將目前的數字 i 累加到 sum
-    sum += i
+# 建立畫布，畫布尺寸縮小為 400x400
+canvas = html.CANVAS(width=400, height=400)  
+brython_div = doc["brython_div1"]  # 將畫布放置於網頁中的指定 div
+brython_div &lt;= canvas
 
-# 將累加結果輸出到畫面
-print(sum)</pre>
-<p><span>題目二: 延伸上題, 設計一個函式 <a href="https://mdecp2024.github.io/hw-41323143/content/Brython.html?src=https://gist.githubusercontent.com/41323143/10199968200fdf7336cf25221b4ef405/raw/1784b3c9cf36f86b7a434352607bded7eef6e24b/hw2.py">addto</a>(1, 100), 可以完成上述的累加結果. </span></p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def addto(start, end):
-    """
-    計算從 start 到 end 之間所有整數的總和。
-    
-    參數：
-    start: 開始的整數
-    end: 結束的整數（包含在內）
+# 取得 canvas 的 2D 繪圖上下文 (context)，可以用來進行繪圖
+ctx = canvas.getContext("2d")
 
-    返回：
-    整數總和
-    """
-    sum = 0  # 初始化總和為 0
-    for i in range(start, end + 1):  # 從 start 累加到 end，包含 end
-        sum += i  # 將當前數字加入總和
-    return sum  # 返回計算的總和
+# 每一格的像素大小，調整為 50 (原為 100)
+pixel_scale = 50  # 縮小每格的像素大小
 
-# 測試函式
-result = addto(1, 100)  # 計算 1 到 100 的總和
-print(result)  # 輸出結果</pre>
-<p><span>題目三: 延伸上題, 設計一個函式 <a href="https://mdecp2024.github.io/hw-41323143/content/Brython.html?src=https://gist.githubusercontent.com/41323143/10199968200fdf7336cf25221b4ef405/raw/76c3ce63b9e8bdd6627680478d1164c316d06ac2/hw3.py">add_only_even</a>(1, 100), 可以完成從第一個輸入整數, 累加到第二個輸入變數的累加結果, 但只納入偶數. 頁面中請以 add_only_even 作為連結標題.</span></p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def add_only_even(start, end):
-    # 初始化變數 sum 為 0，用來儲存偶數的累加結果
-    sum = 0
-    
-    # 使用 for 迴圈，從 start 到 end（包含 end），逐一遍歷
-    for i in range(start, end + 1):
-        # 檢查 i 是否為偶數
-        if i % 1 == 0:
-            # 如果是偶數，就將其加到 sum
-            sum += i
-            # 輸出目前的累加結果
-            print(f"{sum}")
+# 定義原點 (31, 14) 作為起始點偏移，並將偏移值縮小
+offset_x = 32 * 2  # 偏移量仍保留為兩倍放大 (原為 32，放大後為 64)
+offset_y = 10 * 2  # 偏移量仍保留為兩倍放大 (原為 10，放大後為 20)
 
-# 範例：從 1 到 100 累加偶數
-add_only_even(1, 100)
+# 定義迷宮的線條，這裡使用的是一組二維坐標來描述迷宮的邊界
+lines = [
+    ((0, 0), (2, 0)),
+    ((3, 0), (5, 0)),
+    ((5, 0), (5, 5)),
+    ((3, 5), (5, 5)),
+    ((5, 5), (4, 5)),
+    ((4, 5), (4, 3)),
+    ((4, 3), (1, 3)),
+    ((1, 3), (1, 4)),
+    ((3, 3), (3, 2)),
+    # 第二條線
+    ((0, 0), (0, 5)),
+    ((0, 5), (2, 5)),
+    ((2, 5), (2, 4)),
+    ((2, 4), (3, 4)),
+    ((0, 2), (2, 2)),
+    ((2, 2), (2, 1)),
+    ((1, 1), (4, 1)),
+    ((4, 1), (4, 2)),
+]
+
+# 設定線條顏色為藍色
+ctx.strokeStyle = "black"
+# 設定線條寬度為 4 像素
+ctx.lineWidth = 4
+
+# 繪製迷宮的每一條線
+for line in lines:
+    start = line[0]  # 取得每條線的起點
+    end = line[1]    # 取得每條線的終點
+    ctx.beginPath()  # 開始繪製新的一條路徑
+    ctx.moveTo(
+        offset_x + start[0] * pixel_scale,  # 起點的 X 座標
+        offset_y + start[1] * pixel_scale   # 起點的 Y 座標
+    )
+    ctx.lineTo(
+        offset_x + end[0] * pixel_scale,    # 終點的 X 座標
+        offset_y + end[1] * pixel_scale     # 終點的 Y 座標
+    )
+    ctx.stroke()  # 繪製線條
+
+# 定義迷宮的解答路徑
+path = [
+    (2.5, 0),  # 入口
+    (2.5, 0.5),
+    (4.5, 0.5),
+    (4.5, 2.5),
+    (3.5, 2.5),
+    (3.5, 1.5),
+    (2.5, 1.5),
+    (2.5, 2.5),
+    (0.5, 2.5),
+    (0.5, 4.5),
+    (1.5, 4.5),
+    (1.5, 3.5),
+    (3.5, 3.5),
+    (3.5, 4.5),
+    (2.5, 4.5),
+    (2.5, 5),  # 出口
+]
+
+# 設定線條顏色為紅色，表示路徑
+ctx.strokeStyle = "red"
+ctx.lineWidth = 4
+
+# 繪製解答路徑的每一條線
+for i in range(len(path) - 1):
+    start = path[i]   # 取得每條路徑的起點
+    end = path[i + 1]  # 取得每條路徑的終點
+    ctx.beginPath()
+    ctx.moveTo(
+        offset_x + start[0] * pixel_scale,  # 起點的 X 座標
+        offset_y + start[1] * pixel_scale   # 起點的 Y 座標
+    )
+    ctx.lineTo(
+        offset_x + end[0] * pixel_scale,    # 終點的 X 座標
+        offset_y + end[1] * pixel_scale     # 終點的 Y 座標
+    )
+    ctx.stroke()  # 繪製線條
+
+# 設定字體大小為 14px Arial，並將顏色設為紅色
+ctx.font = "14px Arial"
+ctx.fillStyle = "red"
+# 更新座標標註，顯示新的座標 (31, 43)，並將標註位置調整
+ctx.fillText("(31, 43)", offset_x + 10, offset_y + 43)
 </pre>
-<p><span>題目四: 延伸上題, 設計一個函式 <a href="https://mdecp2024.github.io/hw-41323143/content/Brython.html?src=https://gist.githubusercontent.com/41323143/10199968200fdf7336cf25221b4ef405/raw/e305de96473724c259e2669ae4cc4261b31efefe/hw4.py">add_avoid_8</a>(1, 100), 可以完成從第一個輸入整數, 累加到第二個輸入變數的累加過程, 必須避開數字出現"8"的整數</span></p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def add_avoid_8(start, end):
-    # 初始化變數 sum 為 0，用來儲存累加結果
-    sum = 0
-    
-    # 使用 for 迴圈，從 start 到 end（包含 end），逐一遍歷
-    for i in range(start, end + 1):
-        # 檢查 i 是否包含數字 '8'
-        if '8' not in str(i):  # 將 i 轉為字串來檢查是否包含 '8'
-            # 如果不包含 '8'，就將其加到 sum
-            sum += i
-            # 輸出目前的累加結果
-            print(f" {sum}")
-    
-    # 返回累加結果
-    return sum
+<!-- 導入 brython 程式庫 -->
+<p>
+<script src="./../cmsimde/static/brython.js"></script>
+<script src="./../cmsimde/static/brython_stdlib.js"></script>
+</p>
+<p>
+<script>
+window.onload=function(){
+brython({debug:1, pythonpath:['./../cmsimde/static/','./../downloads/py/']});
+}
+</script>
+</p>
+<div id="brython_div1"></div>
+<script type="text/python3">
+from browser import html
+from browser import document as doc
 
-# 範例：從 1 到 100 累加不包含 '8' 的整數
-result = add_avoid_8(1, 100)
-print(f"")
-</pre>
-<p></p>
-<p>上課延伸:<a href="https://mdecp2024.github.io/hw-41323143/content/Brython.html?src=https://gist.githubusercontent.com/41323143/10199968200fdf7336cf25221b4ef405/raw/76c3ce63b9e8bdd6627680478d1164c316d06ac2/hw5.py">3092</a></p>
-<p>這些函式展示了 Python 的基礎控制結構（<code>for</code> 迴圈、條件判斷）、數學運算（加法、取餘運算）、字串操作（轉型與檢查）以及函式的封裝能力</p><br />w14_ex << <a href='w14_ex.html'>Previous</a> <a href='HW 2.html'>Next</a> >> HW 2</div>
+# 建立畫布，畫布尺寸縮小為 400x400
+canvas = html.CANVAS(width=400, height=400)  
+brython_div = doc["brython_div1"]  # 將畫布放置於網頁中的指定 div
+brython_div <= canvas
+
+# 取得 canvas 的 2D 繪圖上下文 (context)，可以用來進行繪圖
+ctx = canvas.getContext("2d")
+
+# 每一格的像素大小，調整為 50 (原為 100)
+pixel_scale = 50  # 縮小每格的像素大小
+
+# 定義原點 (31, 14) 作為起始點偏移，並將偏移值縮小
+offset_x = 32 * 2  # 偏移量仍保留為兩倍放大 (原為 32，放大後為 64)
+offset_y = 10 * 2  # 偏移量仍保留為兩倍放大 (原為 10，放大後為 20)
+
+# 定義迷宮的線條，這裡使用的是一組二維坐標來描述迷宮的邊界
+lines = [
+    ((0, 0), (2, 0)),
+    ((3, 0), (5, 0)),
+    ((5, 0), (5, 5)),
+    ((3, 5), (5, 5)),
+    ((5, 5), (4, 5)),
+    ((4, 5), (4, 3)),
+    ((4, 3), (1, 3)),
+    ((1, 3), (1, 4)),
+    ((3, 3), (3, 2)),
+    # 第二條線
+    ((0, 0), (0, 5)),
+    ((0, 5), (2, 5)),
+    ((2, 5), (2, 4)),
+    ((2, 4), (3, 4)),
+    ((0, 2), (2, 2)),
+    ((2, 2), (2, 1)),
+    ((1, 1), (4, 1)),
+    ((4, 1), (4, 2)),
+]
+
+# 設定線條顏色為藍色
+ctx.strokeStyle = "black"
+# 設定線條寬度為 4 像素
+ctx.lineWidth = 4
+
+# 繪製迷宮的每一條線
+for line in lines:
+    start = line[0]  # 取得每條線的起點
+    end = line[1]    # 取得每條線的終點
+    ctx.beginPath()  # 開始繪製新的一條路徑
+    ctx.moveTo(
+        offset_x + start[0] * pixel_scale,  # 起點的 X 座標
+        offset_y + start[1] * pixel_scale   # 起點的 Y 座標
+    )
+    ctx.lineTo(
+        offset_x + end[0] * pixel_scale,    # 終點的 X 座標
+        offset_y + end[1] * pixel_scale     # 終點的 Y 座標
+    )
+    ctx.stroke()  # 繪製線條
+
+# 定義迷宮的解答路徑
+path = [
+    (2.5, 0),  # 入口
+    (2.5, 0.5),
+    (4.5, 0.5),
+    (4.5, 2.5),
+    (3.5, 2.5),
+    (3.5, 1.5),
+    (2.5, 1.5),
+    (2.5, 2.5),
+    (0.5, 2.5),
+    (0.5, 4.5),
+    (1.5, 4.5),
+    (1.5, 3.5),
+    (3.5, 3.5),
+    (3.5, 4.5),
+    (2.5, 4.5),
+    (2.5, 5),  # 出口
+]
+
+# 設定線條顏色為紅色，表示路徑
+ctx.strokeStyle = "red"
+ctx.lineWidth = 4
+
+# 繪製解答路徑的每一條線
+for i in range(len(path) - 1):
+    start = path[i]   # 取得每條路徑的起點
+    end = path[i + 1]  # 取得每條路徑的終點
+    ctx.beginPath()
+    ctx.moveTo(
+        offset_x + start[0] * pixel_scale,  # 起點的 X 座標
+        offset_y + start[1] * pixel_scale   # 起點的 Y 座標
+    )
+    ctx.lineTo(
+        offset_x + end[0] * pixel_scale,    # 終點的 X 座標
+        offset_y + end[1] * pixel_scale     # 終點的 Y 座標
+    )
+    ctx.stroke()  # 繪製線條
+
+# 設定字體大小為 14px Arial，並將顏色設為紅色
+ctx.font = "14px Arial"
+ctx.fillStyle = "red"
+# 更新座標標註，顯示新的座標 (31, 43)，並將標註位置調整
+ctx.fillText("(31, 43)", offset_x + 10, offset_y + 43)
+</script>
+<p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" frameborder="0" height="477" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/TlmE02QEMtg" title="國立虎尾科技大學機械設計工程系 - 計算機程式 - w16_exam3: 41323143" width="1045"></iframe></p><br />HW 4 Exam << <a href='HW 4 Exam.html'>Previous</a> <a href='Final Report.html'>Next</a> >> Final Report</div>
         
     <!-- footer -->
       <div class="container">
