@@ -2,7 +2,7 @@
         <head>
         <title>cp_hw</title>
         <meta charset="utf-8">
-<meta property="head" content="H1">
+<meta property="head" content="H3">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
         <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap.min.css">
@@ -141,17 +141,201 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">HW 3 Exam << <a href='HW 3 Exam.html'>Previous</a> <a href='HW 4 Exam.html'>Next</a> >> HW 4 Exam<br /><h1>HW 4</h1>
-<h4>主題: 利用 Python 控制機電模擬系統 (20%)</h4>
-<p style="padding-left: 30px;">利用 <a href="https://solvespace.com/">https://solvespace.com/</a> 建立機械系統零組件</p>
-<p style="padding-left: 30px;">利用 <a href="https://www.coppeliarobotics.com/">CoppeliaSim</a> 建立機電模擬系統</p>
-<p style="padding-left: 30px;">利用 <a href="https://manual.coppeliarobotics.com/en/zmqRemoteApiOverview.htm">Python</a> 跨網路控制瀏覽器上的機電模擬系統</p>
-<p style="padding-left: 30px;">範例:</p>
-<p style="padding-left: 60px;"><a href="./../downloads/cd2023_pj3ag4_zmq_football_4.7.7z">cd2023_pj3ag4_zmq_football_4.7.7z</a></p>
-<p style="padding-left: 60px;"><a href="https://localhost:9446/downloads/cd2024_2b_g6_steel_ball_platform_nxopen_copsim.7z">cd2024_2b_g6_steel_ball_platform_nxopen_copsim.7z</a></p>
-<p>完成上述流程整理後, 請將 HW4 自評分數輸入 cp2024 自評表單中.</p>
-<p>    </p>
-<br />HW 3 Exam << <a href='HW 3 Exam.html'>Previous</a> <a href='HW 4 Exam.html'>Next</a> >> HW 4 Exam</div>
+    <div id="tipue_search_content">HW 2 Exam << <a href='HW 2 Exam.html'>Previous</a> <a href='HW 3.html'>Next</a> >> HW 3<br /><h1>w16_exam1</h1>
+<p><span>題目: 請以</span><span>自己的學號最後四碼</span><span>作為繪圖的座標原點, (例如: 若學號最後四碼為 3932, 請將 (39, 32) 作為繪圖座標原點), 並以 pixel=2 的黑色直線分別利用 Brython 繪圖, 標示出向右為正的 X 軸, 以及向下為正的 Y 軸, 並且利用文字標示出原點座標 (例如: (39, 32)), 之後請自選最左側圖形的起始點座標, 直接在頁面畫出下列圖像, 繪圖程式除了必須直接列在頁面 html 檔案外, 也請存入自己的 Gist 區域, 並在所完成的圖像下方, 以自選標題的 anchor 連結至 Gist, 讓使用者點擊該連結後, 可以在各自的 Brython 頁面中繪出下列圖像 (</span><a href="https://www.ccplusmedia.com/wp-content/uploads/2019/10/creative-ad_landscape3.jpg">圖片來源</a><span>).</span></p>
+<p>解:<a href="https://mdecp2024.github.io/hw-41323143/content/Brython.html?src=https://gist.githubusercontent.com/41323143/f13368bef594ea33da6fdde9a321a59a/raw/749e107319a93af093eb90817bf409eb9e638a61/w16-1.py">exam1</a></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from browser import html
+from browser import document as doc
+import math
+
+# 初始化畫布
+def initialize_canvas(canvas_width=1000, canvas_height=400, id="brython_div1"):
+    """
+    初始化畫布，創建一個指定大小的 Canvas 元素，並將其加到 HTML 文件中。
+    返回畫布元素和它的 2D 繪圖上下文。
+    """
+    canvas = html.CANVAS(width=canvas_width, height=canvas_height)
+    brython_div = doc[id]
+    brython_div &lt;= canvas
+    ctx = canvas.getContext("2d")
+    return canvas, ctx
+
+# 繪製六邊形
+def draw_hexagon(ctx, center_x, center_y, size, color):
+    """
+    繪製一個六邊形。
+    center_x, center_y: 六邊形的中心座標
+    size: 六邊形的邊長
+    color: 六邊形的顏色
+    """
+    ctx.beginPath()
+    for i in range(6):
+        angle = math.radians(60 * i)
+        x = center_x + size * math.cos(angle)
+        y = center_y + size * math.sin(angle)
+        if i == 0:
+            ctx.moveTo(x, y)
+        else:
+            ctx.lineTo(x, y)
+    ctx.closePath()
+    ctx.fillStyle = color
+    ctx.fill()
+
+# 繪製直立菱形
+def draw_rhombus(ctx, center_x, center_y, width, height, color):
+    """
+    繪製一個直立的菱形，邊與 X 軸和 Y 軸平行。
+    center_x, center_y: 菱形的中心座標
+    width: 菱形的寬度
+    height: 菱形的高度
+    color: 菱形的顏色
+    """
+    ctx.beginPath()
+    ctx.moveTo(center_x - width / 2, center_y)  # 左頂點
+    ctx.lineTo(center_x, center_y - height / 2)  # 上頂點
+    ctx.lineTo(center_x + width / 2, center_y)  # 右頂點
+    ctx.lineTo(center_x, center_y + height / 2)  # 下頂點
+    ctx.closePath()
+    ctx.fillStyle = color
+    ctx.fill()
+
+# 繪製正三角形
+def draw_triangle(ctx, center_x, center_y, size, color):
+    """
+    繪製一個正三角形。
+    center_x, center_y: 三角形的中心座標
+    size: 三角形的邊長
+    color: 三角形的顏色
+    """
+    height = math.sqrt(3) * size / 2  # 正三角形的高度
+    # 正三角形的頂點位置需要調整，使其對齊菱形中心
+    ctx.beginPath()
+    ctx.moveTo(center_x - size / 2, center_y + height / 2)  # 左底點
+    ctx.lineTo(center_x + size / 2, center_y + height / 2)  # 右底點
+    ctx.lineTo(center_x, center_y - height / 2)  # 上頂點
+    ctx.closePath()
+    ctx.fillStyle = color
+    ctx.fill()
+
+# 繪製圓形
+def draw_circle(ctx, center_x, center_y, radius, color):
+    """
+    繪製一個圓形。
+    center_x, center_y: 圓形的中心座標
+    radius: 圓形的半徑
+    color: 圓形的顏色
+    """
+    ctx.beginPath()
+    ctx.arc(center_x, center_y, radius, 0, 2 * math.pi)
+    ctx.closePath()
+    ctx.fillStyle = color
+    ctx.fill()
+
+# 繪製正方形
+def draw_square(ctx, center_x, center_y, size, color):
+    """
+    繪製一個正方形。
+    center_x, center_y: 正方形的中心座標
+    size: 正方形的邊長
+    color: 正方形的顏色
+    """
+    ctx.beginPath()
+    ctx.rect(center_x - size / 2, center_y - size / 2, size, size)
+    ctx.closePath()
+    ctx.fillStyle = color
+    ctx.fill()
+
+# 繪製長方形
+def draw_rectangle(ctx, center_x, center_y, width, height, color):
+    """
+    繪製一個長方形。
+    center_x, center_y: 長方形的中心座標
+    width: 長方形的寬度
+    height: 長方形的高度
+    color: 長方形的顏色
+    """
+    ctx.beginPath()
+    ctx.rect(center_x - width / 2, center_y - height / 2, width, height)
+    ctx.closePath()
+    ctx.fillStyle = color
+    ctx.fill()
+
+# 繪製坐標軸和原點標註
+def draw_axes_and_origin(ctx, origin_x, origin_y):
+    """
+    繪製坐標軸和原點標註。
+    origin_x, origin_y: 原點位置
+    """
+    # 設置顏色為黑色
+    ctx.strokeStyle = "black"
+    ctx.lineWidth = 2
+    
+    # 繪製 X 軸 (向右為正)
+    ctx.beginPath()
+    ctx.moveTo(0, origin_y)
+    ctx.lineTo(1000, origin_y)  # 延長到畫布的最右端
+    ctx.stroke()
+    
+    # 繪製 Y 軸 (向下為正)
+    ctx.beginPath()
+    ctx.moveTo(origin_x, 0)
+    ctx.lineTo(origin_x, 400)  # 延長到畫布的底端
+    ctx.stroke()
+    
+    # 標註原點 (31, 43)
+    ctx.fillStyle = "black"
+    ctx.font = "16px Arial"
+    ctx.fillText(f"原點(31, 43)", origin_x + 10, origin_y - 10)  # 原點附近顯示文字
+
+# 繪製所有圖形
+def draw_shapes():
+    # 初始化畫布
+    canvas, ctx = initialize_canvas(1000, 400)
+
+    # 原點位置 (31, 43)
+    origin_x = 31
+    origin_y = 43
+    
+    # 先繪製坐標軸
+    draw_axes_and_origin(ctx, origin_x, origin_y)
+
+    # 圖形大小和位置參數
+    y_center = 200  # 所有圖形的 Y 軸中心位置
+    spacing = 120  # 圖形之間的間隔
+
+    # 六邊形
+    hexagon_size = 40  # 六邊形的邊長
+    draw_hexagon(ctx, 100, y_center, hexagon_size, "orange")
+
+    # 直立菱形
+    rhombus_width = 60  # 菱形的寬度 
+    rhombus_height = 80  # 菱形的高度 
+    draw_rhombus(ctx, 100 + spacing, y_center, rhombus_width, rhombus_height, "green")
+
+    # 正三角形，計算三角形的位置，使頂點與菱形中心對齊
+    triangle_size = 60  # 正三角形的邊長
+    triangle_x = 100 + spacing + rhombus_width / 2  # 三角形的 X 座標
+    triangle_y = y_center + rhombus_height / 2  # 三角形的 Y 座標 (使頂點對齊菱形的中心)
+    draw_triangle(ctx, triangle_x, triangle_y, triangle_size, "blue")
+
+    # 圓形
+    circle_radius = 40  # 圓形的半徑
+    draw_circle(ctx, 100 + 2 * spacing, y_center, circle_radius, "pink")
+
+    # 正方形
+    square_size = 60  # 正方形的邊長
+    draw_square(ctx, 100 + 3 * spacing, y_center, square_size, "yellow")
+
+    # 長方形
+    rectangle_width = 100  # 長方形的寬度
+    rectangle_height = 60  # 長方形的高度
+    draw_rectangle(ctx, 100 + 4 * spacing, y_center, rectangle_width, rectangle_height, "blue")
+
+# 主程式開始
+draw_shapes()
+</pre>
+<p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" frameborder="0" height="477" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/7P7FTAiYiKQ" title="國立虎尾科技大學機械設計工程系 - 計算機程式 - w16_exam1: 41323143" width="1045"></iframe></p>
+<p></p><br />HW 2 Exam << <a href='HW 2 Exam.html'>Previous</a> <a href='HW 3.html'>Next</a> >> HW 3</div>
         
     <!-- footer -->
       <div class="container">
