@@ -130,7 +130,7 @@ img.add_border {
                             <li><a href="./../blog/index.html">blog</a></li>
                         </ul>
                       </li>
-                     <li><a href='About.html'>About</a><li><a href='Attendance.html'>Attendance</a><li class='has-children'><a href='HW 1.html'>HW 1</a><ul class='dropdown'><li class='has-children'><a href='HW 1 Exam.html'>HW 1 Exam</a><ul class='dropdown'><li><a href='w7.html'>w7</a><li><a href='w9.html'>w9</a><li><a href='w10.html'>w10</a><li><a href='w11_hw.html'>w11_hw</a><li><a href='w12_hw.html'>w12_hw</a><li><a href='w13_hw.html'>w13_hw</a><li><a href='w14_ex.html'>w14_ex</a><li><a href='w15.html'>w15</a></li></li></ul></ul><li class='has-children'><a href='HW 2.html'>HW 2</a><ul class='dropdown'><li class='has-children'><a href='HW 2 Exam.html'>HW 2 Exam</a><ul class='dropdown'><li><a href='w16_exam1.html'>w16_exam1</a></li></li></ul></ul><li class='has-children'><a href='HW 3.html'>HW 3</a><ul class='dropdown'><li><a href='HW 3 Exam.html'>HW 3 Exam</a></li></ul><li class='has-children'><a href='HW 4.html'>HW 4</a><ul class='dropdown'><li><a href='HW 4 Exam.html'>HW 4 Exam</a></li></ul><li><a href='Final Report.html'>Final Report</a><li><a href='Brython.html'>Brython</a></li>
+                     <li><a href='About.html'>About</a><li><a href='Attendance.html'>Attendance</a><li class='has-children'><a href='HW 1.html'>HW 1</a><ul class='dropdown'><li class='has-children'><a href='HW 1 Exam.html'>HW 1 Exam</a><ul class='dropdown'><li><a href='w7.html'>w7</a><li><a href='w9.html'>w9</a><li><a href='w10.html'>w10</a><li><a href='w11_hw.html'>w11_hw</a><li><a href='w12_hw.html'>w12_hw</a><li><a href='w13_hw.html'>w13_hw</a><li><a href='w14_ex.html'>w14_ex</a><li><a href='w15.html'>w15</a></li></li></ul></ul><li class='has-children'><a href='HW 2.html'>HW 2</a><ul class='dropdown'><li class='has-children'><a href='HW 2 Exam.html'>HW 2 Exam</a><ul class='dropdown'><li><a href='w16_exam1.html'>w16_exam1</a></li></li></ul></ul><li class='has-children'><a href='HW 3.html'>HW 3</a><ul class='dropdown'><li class='has-children'><a href='HW 3 Exam.html'>HW 3 Exam</a><ul class='dropdown'><li><a href='w16_exam2.html'>w16_exam2</a></li></li></ul></ul><li class='has-children'><a href='HW 4.html'>HW 4</a><ul class='dropdown'><li><a href='HW 4 Exam.html'>HW 4 Exam</a></li></ul><li><a href='Final Report.html'>Final Report</a><li><a href='Brython.html'>Brython</a></li>
                       </ul>
                 </nav>
               </div>
@@ -335,7 +335,210 @@ def draw_shapes():
 draw_shapes()
 </pre>
 <p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" frameborder="0" height="477" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/7P7FTAiYiKQ" title="國立虎尾科技大學機械設計工程系 - 計算機程式 - w16_exam1: 41323143" width="1045"></iframe></p>
-<p></p><br />HW 2 Exam << <a href='HW 2 Exam.html'>Previous</a> <a href='HW 3.html'>Next</a> >> HW 3</div>
+<!-- 導入 brython 程式庫 -->
+<p>
+<script src="./../cmsimde/static/brython.js"></script>
+<script src="./../cmsimde/static/brython_stdlib.js"></script>
+</p>
+<p>
+<script>
+window.onload=function(){
+brython({debug:1, pythonpath:['./../cmsimde/static/','./../downloads/py/']});
+}
+</script>
+</p>
+<div id="brython_div1"></div>
+<script type="text/python3">
+from browser import html
+from browser import document as doc
+import math
+
+# 初始化畫布
+def initialize_canvas(canvas_width=1000, canvas_height=400, id="brython_div1"):
+    """
+    初始化畫布，創建一個指定大小的 Canvas 元素，並將其加到 HTML 文件中。
+    返回畫布元素和它的 2D 繪圖上下文。
+    """
+    canvas = html.CANVAS(width=canvas_width, height=canvas_height)
+    brython_div = doc[id]
+    brython_div <= canvas
+    ctx = canvas.getContext("2d")
+    return canvas, ctx
+
+# 繪製六邊形
+def draw_hexagon(ctx, center_x, center_y, size, color):
+    """
+    繪製一個六邊形。
+    center_x, center_y: 六邊形的中心座標
+    size: 六邊形的邊長
+    color: 六邊形的顏色
+    """
+    ctx.beginPath()
+    for i in range(6):
+        angle = math.radians(60 * i)
+        x = center_x + size * math.cos(angle)
+        y = center_y + size * math.sin(angle)
+        if i == 0:
+            ctx.moveTo(x, y)
+        else:
+            ctx.lineTo(x, y)
+    ctx.closePath()
+    ctx.fillStyle = color
+    ctx.fill()
+
+# 繪製直立菱形
+def draw_rhombus(ctx, center_x, center_y, width, height, color):
+    """
+    繪製一個直立的菱形，邊與 X 軸和 Y 軸平行。
+    center_x, center_y: 菱形的中心座標
+    width: 菱形的寬度
+    height: 菱形的高度
+    color: 菱形的顏色
+    """
+    ctx.beginPath()
+    ctx.moveTo(center_x - width / 2, center_y)  # 左頂點
+    ctx.lineTo(center_x, center_y - height / 2)  # 上頂點
+    ctx.lineTo(center_x + width / 2, center_y)  # 右頂點
+    ctx.lineTo(center_x, center_y + height / 2)  # 下頂點
+    ctx.closePath()
+    ctx.fillStyle = color
+    ctx.fill()
+
+# 繪製正三角形
+def draw_triangle(ctx, center_x, center_y, size, color):
+    """
+    繪製一個正三角形。
+    center_x, center_y: 三角形的中心座標
+    size: 三角形的邊長
+    color: 三角形的顏色
+    """
+    height = math.sqrt(3) * size / 2  # 正三角形的高度
+    # 正三角形的頂點位置需要調整，使其對齊菱形中心
+    ctx.beginPath()
+    ctx.moveTo(center_x - size / 2, center_y + height / 2)  # 左底點
+    ctx.lineTo(center_x + size / 2, center_y + height / 2)  # 右底點
+    ctx.lineTo(center_x, center_y - height / 2)  # 上頂點
+    ctx.closePath()
+    ctx.fillStyle = color
+    ctx.fill()
+
+# 繪製圓形
+def draw_circle(ctx, center_x, center_y, radius, color):
+    """
+    繪製一個圓形。
+    center_x, center_y: 圓形的中心座標
+    radius: 圓形的半徑
+    color: 圓形的顏色
+    """
+    ctx.beginPath()
+    ctx.arc(center_x, center_y, radius, 0, 2 * math.pi)
+    ctx.closePath()
+    ctx.fillStyle = color
+    ctx.fill()
+
+# 繪製正方形
+def draw_square(ctx, center_x, center_y, size, color):
+    """
+    繪製一個正方形。
+    center_x, center_y: 正方形的中心座標
+    size: 正方形的邊長
+    color: 正方形的顏色
+    """
+    ctx.beginPath()
+    ctx.rect(center_x - size / 2, center_y - size / 2, size, size)
+    ctx.closePath()
+    ctx.fillStyle = color
+    ctx.fill()
+
+# 繪製長方形
+def draw_rectangle(ctx, center_x, center_y, width, height, color):
+    """
+    繪製一個長方形。
+    center_x, center_y: 長方形的中心座標
+    width: 長方形的寬度
+    height: 長方形的高度
+    color: 長方形的顏色
+    """
+    ctx.beginPath()
+    ctx.rect(center_x - width / 2, center_y - height / 2, width, height)
+    ctx.closePath()
+    ctx.fillStyle = color
+    ctx.fill()
+
+# 繪製坐標軸和原點標註
+def draw_axes_and_origin(ctx, origin_x, origin_y):
+    """
+    繪製坐標軸和原點標註。
+    origin_x, origin_y: 原點位置
+    """
+    # 設置顏色為黑色
+    ctx.strokeStyle = "black"
+    ctx.lineWidth = 2
+    
+    # 繪製 X 軸 (向右為正)
+    ctx.beginPath()
+    ctx.moveTo(0, origin_y)
+    ctx.lineTo(1000, origin_y)  # 延長到畫布的最右端
+    ctx.stroke()
+    
+    # 繪製 Y 軸 (向下為正)
+    ctx.beginPath()
+    ctx.moveTo(origin_x, 0)
+    ctx.lineTo(origin_x, 400)  # 延長到畫布的底端
+    ctx.stroke()
+    
+    # 標註原點 (31, 43)
+    ctx.fillStyle = "black"
+    ctx.font = "16px Arial"
+    ctx.fillText(f"原點(31, 43)", origin_x + 10, origin_y - 10)  # 原點附近顯示文字
+
+# 繪製所有圖形
+def draw_shapes():
+    # 初始化畫布
+    canvas, ctx = initialize_canvas(1000, 400)
+
+    # 原點位置 (31, 43)
+    origin_x = 31
+    origin_y = 43
+    
+    # 先繪製坐標軸
+    draw_axes_and_origin(ctx, origin_x, origin_y)
+
+    # 圖形大小和位置參數
+    y_center = 200  # 所有圖形的 Y 軸中心位置
+    spacing = 120  # 圖形之間的間隔
+
+    # 六邊形
+    hexagon_size = 40  # 六邊形的邊長
+    draw_hexagon(ctx, 100, y_center, hexagon_size, "orange")
+
+    # 直立菱形
+    rhombus_width = 60  # 菱形的寬度 
+    rhombus_height = 80  # 菱形的高度 
+    draw_rhombus(ctx, 100 + spacing, y_center, rhombus_width, rhombus_height, "green")
+
+    # 正三角形，計算三角形的位置，使頂點與菱形中心對齊
+    triangle_size = 60  # 正三角形的邊長
+    triangle_x = 100 + spacing + rhombus_width / 2  # 三角形的 X 座標
+    triangle_y = y_center + rhombus_height / 2  # 三角形的 Y 座標 (使頂點對齊菱形的中心)
+    draw_triangle(ctx, triangle_x, triangle_y, triangle_size, "blue")
+
+    # 圓形
+    circle_radius = 40  # 圓形的半徑
+    draw_circle(ctx, 100 + 2 * spacing, y_center, circle_radius, "pink")
+
+    # 正方形
+    square_size = 60  # 正方形的邊長
+    draw_square(ctx, 100 + 3 * spacing, y_center, square_size, "yellow")
+
+    # 長方形
+    rectangle_width = 100  # 長方形的寬度
+    rectangle_height = 60  # 長方形的高度
+    draw_rectangle(ctx, 100 + 4 * spacing, y_center, rectangle_width, rectangle_height, "blue")
+
+# 主程式開始
+draw_shapes()
+</script><br />HW 2 Exam << <a href='HW 2 Exam.html'>Previous</a> <a href='HW 3.html'>Next</a> >> HW 3</div>
         
     <!-- footer -->
       <div class="container">
