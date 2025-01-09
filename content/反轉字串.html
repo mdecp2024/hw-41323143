@@ -2,7 +2,7 @@
         <head>
         <title>cp_hw</title>
         <meta charset="utf-8">
-<meta property="head" content="H3">
+<meta property="head" content="H2">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
         <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap.min.css">
@@ -141,86 +141,172 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">w11_hw << <a href='w11_hw.html'>Previous</a> <a href='w13_hw.html'>Next</a> >> w13_hw<br /><h1>w12_hw</h1>
-<p style="text-align: left;">1. 請各組組員分別利用<span> </span><span>Brython 以及 Jupyter lab</span><span> </span>環境, 執行<a href="http://229.cycu.org/python_2025_lite.7z">可攜程式</a><span> </span>notebook 目錄中的<span> </span><span>01_string_input_print.ipynb 至 10_for_search.ipynb</span><span> </span>筆記本程式, 完成後請將能在 Brython 執行的程式碼存入個人<span> </span><span>Gist</span><span> </span>後, 將各程式執行連結放入 w12_hw 網頁上. 最後請說明各範例中所使用的程式語法以及執行心得.</p>
-<p style="text-align: left;"><span style="color: #000000;">第一題:<em>input與 print</em></span></p>
-<p style="text-align: left;"><em><span>  input範例程式：<a href="https://mdecp2024.github.io/hw-41323143/content/Brython.html?src=https://gist.githubusercontent.com/41323143/d330204fd1c7692d9adb8fca6d0b6068/raw/fa025bf0a3fd176ba1aa3154dd6ca287c6b31476/hw1.py">你叫啥</a></span></em></p>
-<p style="text-align: left;"><span face="monospace" style="font-family: monospace;"><b> </b>說明:</span>顯示提示訊息 「你叫啥」,等待使用者輸入,將使用者輸入的內容（字串形式）傳回。 </p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">input("你叫啥 ")</pre>
-<p style="text-align: left;"><em>print<span>範例程式：<a href="https://mdecp2024.github.io/hw-41323143/content/Brython.html?src=https://gist.githubusercontent.com/41323143/d330204fd1c7692d9adb8fca6d0b6068/raw/fa025bf0a3fd176ba1aa3154dd6ca287c6b31476/hw2.py">貓咪</a></span></em></p>
-<p style="text-align: left;">說明：<code>print()</code> 函式：</p>
-<p style="text-align: left;">用來在終端（或控制台）中顯示內容。</p>
-<p style="text-align: left;">每行的內容由雙引號（或單引號）包裹。</p>
-<p style="text-align: left;">每行的內容解析：<code>print(" /\_/\ ")</code>： 顯示貓耳朵和頭部的上半部分：<code>/\_/\</code>。</p>
-<p style="text-align: left;"><code>print(" &gt;^.^&lt; ")</code>： 顯示貓咪的臉部：<code>&gt;^.^&lt;</code>。</p>
-<p style="text-align: left;"><code>print(" / \\ ")</code>： 顯示貓咪的身體底部和爪子的形狀：<code>/ \</code>。 注意：這裡的 <code>\\</code> 是為了顯示單個反斜槓 <code>\</code>，因為  反斜槓在 Python 中是特殊字符（用於轉義）。</p>
-<p style="text-align: left;"><code>print(" (___)___")</code>： 顯示貓咪的身體和尾巴的樣式。</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">print (" /\_/\   ")
-print (" &gt;^.^&lt;   ")
-print ("  / \    ")
-print (" (___)___")</pre>
-<p style="text-align: left;"></p>
-<p style="text-align: left;">第二題:variables</p>
-<p style="text-align: left;">2-1範例:<a href="https://mdecp2024.github.io/hw-41323143/content/Brython.html?src=https://gist.githubusercontent.com/41323143/d330204fd1c7692d9adb8fca6d0b6068/raw/03321f2cd3a0ad4f965287f6c940ef43dff9d199/hw3.py">名字</a></p>
-<p style="text-align: left;">說明:這段程式碼定義兩個字串變數 <code>first_name</code> 和 <code>last_name</code>，分別儲存名字和姓氏，然後用 <code>print()</code> 函式輸出這些值。</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">first_name = "Fernando"  # 定義變數 first_name，內容是字串 "Fernando"
-last_name  = "Pérez"     # 定義變數 last_name，內容是字串 "Pérez"
-print(first_name)        # 將變數 first_name 的內容輸出到終端
-print(last_name)         # 將變數 last_name 的內容輸出到終端</pre>
-<p style="text-align: left;">2-2範例:<a href="https://mdecp2024.github.io/hw-41323143/content/Brython.html?src=https://gist.githubusercontent.com/41323143/d330204fd1c7692d9adb8fca6d0b6068/raw/23a43a374efd3e0dc577ffba6d81abc26c0034c7/hw4.py">名子+喜歡的食物</a></p>
-<p style="text-align: left;">說明:一個簡單的互動式程式，功能是詢問使用者名字和最喜歡的食物，然後輸出相關訊息。</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">name = input("What's your name? ")  # 提示使用者輸入名字
-favorite_food = input("What is your favorite food? ")  # 提示使用者輸入最喜歡的食物
-
-print("Hi! My name is " + name)  # 顯示名字
-print("My favorite food is " + favorite_food)  # 顯示最喜歡的食物
-print(name + "'s favorite food is " + favorite_food)  # 顯示完整句子
-</pre>
-<p style="text-align: left;"> 第三題:list_if_in_else</p>
-<p style="text-align: left;">範例:<a href="https://mdecp2024.github.io/hw-41323143/content/Brython.html?src=https://gist.githubusercontent.com/41323143/d330204fd1c7692d9adb8fca6d0b6068/raw/78bec61e774e64e7f2bf94ba5e23f861e53e4420/hw5.py">購買書籍</a></p>
-<p style="text-align: left;">說明:程式碼會顯示一個書籍清單，然後詢問使用者想購買的書籍。如果使用者選擇的書籍在清單中，程式會顯示「有售」，否則顯示「無售」。</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">programming_books = ["Learn python", "Python for all", "Intro to python"]  # 定義書籍清單
-print(programming_books)  # 顯示可選擇的書籍
-
-wanted_book = input("Hi! What book would you like to buy?")  # 提示使用者輸入想購買的書籍名稱
-print(wanted_book)  # 顯示使用者輸入的書籍名稱
-
-# 判斷書籍是否在可購買清單中
-if wanted_book in programming_books:
-    print("Yes, we sell it!")  # 書籍在清單中，顯示有售
-else:
-    print("Sorry, we don't sell that book")  # 書籍不在清單中，顯示無售</pre>
-<p style="text-align: left;">第四題:list_append_remove</p>
-<p style="text-align: left;">範例:<a href="https://mdecp2024.github.io/hw-41323143/content/Brython.html?src=https://gist.githubusercontent.com/41323143/d330204fd1c7692d9adb8fca6d0b6068/raw/c03af69c566dc9a8b0dae00614a09a019d2d0fa3/hw6.py">購物清單</a></p>
-<p style="text-align: left;">說明:顯示目前的購物清單,提示使用者輸入想要新增的項目。</p>
-<p style="text-align: left;">如果該項目已經在清單中，顯示已存在；如果沒有，將其添加到清單中,提示使用者輸入要刪除的項目。</p>
-<p style="text-align: left;">如果該項目存在於清單中，就將其刪除，並顯示更新後的清單。如果該項目不在清單中，顯示錯誤訊息。</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">shopping_list = ["carrots", "chocolate", "olives"]  # 初始購物清單
-print(shopping_list)  # 顯示當前購物清單
-
-new_item = input("What else do I have to buy?")  # 提示使用者輸入想買的物品
-
-# 檢查新項目是否已在清單中
-if new_item in shopping_list:
-    print(new_item + " is/are already in the shopping list")  # 如果已有此項目，顯示提示
-    print(shopping_list)  # 顯示目前的清單
-else:
-    shopping_list.append(new_item)  # 否則將新項目加入清單
-    print(shopping_list)  # 顯示更新後的清單
-
-item_to_remove = input("What do I have to remove?")  # 提示使用者輸入要刪除的物品
-
-# 檢查要刪除的項目是否在清單中
-if item_to_remove in shopping_list:
-    shopping_list.remove(item_to_remove)  # 如果在清單中，將其刪除
-    print(shopping_list)  # 顯示更新後的清單
-else:
-    print(item_to_remove + " is/are not in the list")  # 如果不在清單中，顯示錯誤訊息
-    print(shopping_list)  # 顯示未變動的清單
-</pre>
-<p></p>
-<p></p>
-<br />w11_hw << <a href='w11_hw.html'>Previous</a> <a href='w13_hw.html'>Next</a> >> w13_hw</div>
+    <div id="tipue_search_content">簡單的數學計算器 << <a href='簡單的數學計算器.html'>Previous</a> <a href='費氏數列.html'>Next</a> >> 費氏數列<br /><h1>反轉字串</h1>
+<p>寫一個函數 `reverse_string`，接受一個字串作為參數，並返回該字串的反轉版本。例如：`reverse_string("hello")` 應返回 `olleh`。</p>
+<div>
+<div class="syntaxhighlighter py" id="highlighter_209059">
+<table border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+<div class="line number4 index3 alt1">4</div>
+<div class="line number5 index4 alt2">5</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="py keyword">def</code> <code class="py plain">reverse_string(s):</code></div>
+<div class="line number2 index1 alt1"><code class="py spaces">    </code><code class="py keyword">return</code> <code class="py plain">s[::</code><code class="py keyword">-</code><code class="py value">1</code><code class="py plain">]  </code><code class="py comments"># 使用切片方法反轉字串</code></div>
+<div class="line number3 index2 alt2"> </div>
+<div class="line number4 index3 alt1"><code class="py comments"># 測試函數</code></div>
+<div class="line number5 index4 alt2"><code class="py functions">print</code><code class="py plain">(reverse_string(</code><code class="py string">"hello"</code><code class="py plain">))  </code><code class="py comments"># 輸出: olleh</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>寫一個函數 string_length，接受一個字串作為參數，並返回該字串的長度。例如：string_length("hello") 應返回 5。</p>
+<div>
+<div class="syntaxhighlighter py" id="highlighter_118805">
+<table border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+<div class="line number4 index3 alt1">4</div>
+<div class="line number5 index4 alt2">5</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="py keyword">def</code> <code class="py plain">string_length(s):</code></div>
+<div class="line number2 index1 alt1"><code class="py spaces">    </code><code class="py keyword">return</code> <code class="py functions">len</code><code class="py plain">(s)  </code><code class="py comments"># 使用內建的 len() 函數來計算字串的長度</code></div>
+<div class="line number3 index2 alt2"> </div>
+<div class="line number4 index3 alt1"><code class="py comments"># 測試函數</code></div>
+<div class="line number5 index4 alt2"><code class="py functions">print</code><code class="py plain">(string_length(</code><code class="py string">"hello"</code><code class="py plain">))  </code><code class="py comments"># 輸出: 5</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><br/><br/><br/>寫一個函數 toggle_case，接受一個字串作為參數，並返回該字串中每個字母大小寫互換後的版本。例如：toggle_case("Hello") 應返回 hELLO。</p>
+<div>
+<div class="syntaxhighlighter py" id="highlighter_30274">
+<table border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+<div class="line number4 index3 alt1">4</div>
+<div class="line number5 index4 alt2">5</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="py keyword">def</code> <code class="py plain">toggle_case(s):</code></div>
+<div class="line number2 index1 alt1"><code class="py spaces">    </code><code class="py keyword">return</code> <code class="py plain">s.swapcase()  </code><code class="py comments"># 使用內建的 swapcase() 函數來互換字母的大小寫</code></div>
+<div class="line number3 index2 alt2"> </div>
+<div class="line number4 index3 alt1"><code class="py comments"># 測試函數</code></div>
+<div class="line number5 index4 alt2"><code class="py functions">print</code><code class="py plain">(toggle_case(</code><code class="py string">"Hello"</code><code class="py plain">))  </code><code class="py comments"># 輸出: hELLO</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><br/><br/><br/>寫一個函數 word_count，接受一個字串作為參數，並返回該字串中單詞的數量。例如：word_count("Hello world") 應返回 2。</p>
+<div>
+<div class="syntaxhighlighter py" id="highlighter_660951">
+<table border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+<div class="line number4 index3 alt1">4</div>
+<div class="line number5 index4 alt2">5</div>
+<div class="line number6 index5 alt1">6</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="py keyword">def</code> <code class="py plain">word_count(s):</code></div>
+<div class="line number2 index1 alt1"><code class="py spaces">    </code><code class="py plain">words </code><code class="py keyword">=</code> <code class="py plain">s.split()  </code><code class="py comments"># 使用 split() 函數將字串分割為單詞</code></div>
+<div class="line number3 index2 alt2"><code class="py spaces">    </code><code class="py keyword">return</code> <code class="py functions">len</code><code class="py plain">(words)  </code><code class="py comments"># 返回單詞的數量</code></div>
+<div class="line number4 index3 alt1"> </div>
+<div class="line number5 index4 alt2"><code class="py comments"># 測試函數</code></div>
+<div class="line number6 index5 alt1"><code class="py functions">print</code><code class="py plain">(word_count(</code><code class="py string">"Hello world"</code><code class="py plain">))  </code><code class="py comments"># 輸出: 2</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><br/><br/><br/>寫一個函數 is_palindrome，接受一個字串作為參數，並返回該字串是否為迴文（正反讀都相同）。例如：is_palindrome("madam") 應返回 True。</p>
+<div>
+<div class="syntaxhighlighter py" id="highlighter_8124">
+<table border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+<div class="line number4 index3 alt1">4</div>
+<div class="line number5 index4 alt2">5</div>
+<div class="line number6 index5 alt1">6</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="py keyword">def</code> <code class="py plain">is_palindrome(s):</code></div>
+<div class="line number2 index1 alt1"><code class="py spaces">    </code><code class="py keyword">return</code> <code class="py plain">s </code><code class="py keyword">=</code><code class="py keyword">=</code> <code class="py plain">s[::</code><code class="py keyword">-</code><code class="py value">1</code><code class="py plain">]  </code><code class="py comments"># 檢查字串是否等於它的反轉版本</code></div>
+<div class="line number3 index2 alt2"> </div>
+<div class="line number4 index3 alt1"><code class="py comments"># 測試函數</code></div>
+<div class="line number5 index4 alt2"><code class="py functions">print</code><code class="py plain">(is_palindrome(</code><code class="py string">"madam"</code><code class="py plain">))  </code><code class="py comments"># 輸出: True</code></div>
+<div class="line number6 index5 alt1"><code class="py functions">print</code><code class="py plain">(is_palindrome(</code><code class="py string">"hello"</code><code class="py plain">))  </code><code class="py comments"># 輸出: False</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><br/><br/><br/>寫一個函數 split_string，接受一個字串和一個分隔符作為參數，並返回一個包含切割後子字串的清單。例如：split_string("hello world", " ") 應返回 ['hello', 'world']。</p>
+<div>
+<div class="syntaxhighlighter py" id="highlighter_849626">
+<table border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+<div class="line number4 index3 alt1">4</div>
+<div class="line number5 index4 alt2">5</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="py keyword">def</code> <code class="py plain">split_string(s, delimiter):</code></div>
+<div class="line number2 index1 alt1"><code class="py spaces">    </code><code class="py keyword">return</code> <code class="py plain">s.split(delimiter)  </code><code class="py comments"># 使用 split() 函數根據分隔符切割字串</code></div>
+<div class="line number3 index2 alt2"> </div>
+<div class="line number4 index3 alt1"><code class="py comments"># 測試函數</code></div>
+<div class="line number5 index4 alt2"><code class="py functions">print</code><code class="py plain">(split_string(</code><code class="py string">"hello world"</code><code class="py plain">, </code><code class="py string">" "</code><code class="py plain">))  </code><code class="py comments"># 輸出: ['hello', 'world']</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<br />簡單的數學計算器 << <a href='簡單的數學計算器.html'>Previous</a> <a href='費氏數列.html'>Next</a> >> 費氏數列</div>
         
     <!-- footer -->
       <div class="container">

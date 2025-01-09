@@ -1,0 +1,903 @@
+<!DOCTYPE html><html>
+        <head>
+        <title>cp_hw</title>
+        <meta charset="utf-8">
+<meta property="head" content="H2">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/magnific-popup.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/jquery-ui.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/owl.carousel.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/owl.theme.default.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap-datepicker.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/flaticon/font/flaticon.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/aos.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/style.css">
+        <link rel="shortcut icon" href="./../cmsimde/static/favicons.png">
+        
+        <style type='text/css'>
+            .site-section {
+            background-color: #FFFF;
+            padding: 40px 40px;
+            }
+            body > div > div.dropdown.open {
+                display: block;
+            }
+        </style>
+    
+        <!-- <script src="./../cmsimde/static/jquery.js"></script> -->
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+        <script src="../cmsimde/static/chimper/js/jquery-3.3.1.min.js"></script>
+        <link rel="stylesheet" href="./../cmsimde/static/tipuesearch/css/normalize.min.css">
+        <script src="./../cmsimde/static/tipuesearch/tipuesearch_set.js"></script>
+        <script src="tipuesearch_content.js"></script>
+        <link rel="stylesheet" href="./../cmsimde/static/tipuesearch/css/tipuesearch.css">
+        <script src="./../cmsimde/static/tipuesearch/tipuesearch.js"></script>
+        <!-- for Wink3 客製化關閉 -->
+        <!--
+        <link rel="stylesheet" type="text/css" href="./../cmsimde/static/winkPlayer.css" />
+        <script type="text/javascript" src="./../cmsimde/static/winkPlayer.js"></script>
+        -->
+        <script>
+            /* original tipuesearch
+            $(document).ready(function() {
+                 $('#tipue_search_input').tipuesearch();
+            });
+            */
+            // customed doSearch
+            function doSearch() {
+                $('#tipue_search_input').tipuesearch({
+                    newWindow: true, 
+                    minimumLength: 2,
+                    wholeWords: false, // for search 中文
+                });
+            }
+            $(document).ready(doSearch);
+        </script>
+        
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shCore.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushBash.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushDiff.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushJScript.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushJava.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPython.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushSql.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushHaxe.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushXml.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPhp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPowerShell.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushLua.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushMojo.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCpp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCss.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCSharp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushDart.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushRust.js"></script>
+<link type="text/css" rel="stylesheet" href="./../cmsimde/static/syntaxhighlighter/css/shCoreDefault.css"/>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+<!-- 暫時不用
+<script src="./../cmsimde/static/fengari-web.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/Cango-13v08-min.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/CangoAxes-4v01-min.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/gearUtils-05.js"></script>
+-->
+<!-- for Brython 暫時不用
+<script src="https://scrum-3.github.io/web/brython/brython.js"></script>
+<script src="https://scrum-3.github.io/web/brython/brython_stdlib.js"></script>
+-->
+<style>
+img.add_border {
+    border: 3px solid blue;
+}
+</style>
+
+</head>
+<body>
+<div class='container'><nav>
+        
+    <div class="site-wrap">
+
+    <div class="site-mobile-menu">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+    
+            <header class="site-navbar py-4 bg-white" role="banner">
+              <div class="container">
+                <div class="row align-items-center">
+                <h1>41323143 - cp2024 作業網站</h1>
+                <div class="pl-4">
+                    <form>
+                    <input type="text" placeholder="Search" name="q" id="tipue_search_input" pattern=".{2,}" title="At least 2 characters" required>
+                    </form>
+                </div>
+                  <!-- <div class="col-11 col-xl-2">
+                    <h1 class="mb-0 site-logo"><a href="index.html" class="text-black h2 mb-0">41323143 - cp2024 作業網站</a></h1> 
+                  </div>
+                  -->
+                  <div class="col-12 col-md-10 d-none d-xl-block">
+                    <nav class="site-navigation position-relative text-right" role="navigation">
+    <ul class='site-menu js-clone-nav mr-auto d-none d-lg-block'>
+                        <li class="active has-children"><a href="index.html">Home</a>
+                        <ul class="dropdown">
+                            <li><a href="sitemap.html">SMap</a></li>
+                            <li><a href="./../reveal/index.html">reveal</a></li>
+                            <li><a href="./../blog/index.html">blog</a></li>
+                        </ul>
+                      </li>
+                     <li><a href='About.html'>About</a><li><a href='Attendance.html'>Attendance</a><li class='has-children'><a href='HW 1.html'>HW 1</a><ul class='dropdown'><li class='has-children'><a href='HW 1 Exam.html'>HW 1 Exam</a><ul class='dropdown'><li><a href='w7.html'>w7</a><li><a href='w9.html'>w9</a><li><a href='w10.html'>w10</a><li><a href='w11_hw.html'>w11_hw</a><li><a href='w12_hw.html'>w12_hw</a><li><a href='w13_hw.html'>w13_hw</a><li><a href='w14_ex.html'>w14_ex</a><li><a href='w15.html'>w15</a></li></li></ul></ul><li class='has-children'><a href='HW 2.html'>HW 2</a><ul class='dropdown'><li class='has-children'><a href='HW 2 Exam.html'>HW 2 Exam</a><ul class='dropdown'><li><a href='w16_exam1.html'>w16_exam1</a></li></li></ul></ul><li class='has-children'><a href='HW 3.html'>HW 3</a><ul class='dropdown'><li class='has-children'><a href='HW 3 Exam.html'>HW 3 Exam</a><ul class='dropdown'><li><a href='w16_exam2.html'>w16_exam2</a></li></li></ul></ul><li class='has-children'><a href='HW 4.html'>HW 4</a><ul class='dropdown'><li class='has-children'><a href='HW 4 Exam.html'>HW 4 Exam</a><ul class='dropdown'><li><a href='w16_exam3.html'>w16_exam3</a></li></li></ul></ul><li class='has-children'><a href='Final Report.html'>Final Report</a><ul class='dropdown'><li><a href='簡單的數學計算器.html'>簡單的數學計算器</a><li><a href='反轉字串.html'>反轉字串</a><li><a href='費氏數列.html'>費氏數列</a><li><a href='清單排序.html'>清單排序</a><li><a href='字母計數器.html'>字母計數器</a><li><a href='進階Brython 繪圖.html'>進階Brython 繪圖</a><li><a href='基礎Brython 繪圖.html'>基礎Brython 繪圖</a></li></ul><li><a href='Brython.html'>Brython</a></li>
+                      </ul>
+                </nav>
+              </div>
+              <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
+              </div>
+
+            </div>
+          </div>
+          
+        </header>
+    <div id="tipue_search_content">字母計數器 << <a href='字母計數器.html'>Previous</a> <a href='基礎Brython 繪圖.html'>Next</a> >> 基礎Brython 繪圖<br /><h1>進階Brython 繪圖</h1>
+<p>繪製同心圓：</p>
+<p>使用 for 迴圈和 if 條件，在畫布上繪製一組同心圓。每個圓的中心點相同，半徑隨著循環遞增。例如，繪製 10 個半徑從 10 到 100 的同心圓，每次增加 10。</p>
+<div>
+<div class="syntaxhighlighter py" id="highlighter_713020">
+<table border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+<div class="line number4 index3 alt1">4</div>
+<div class="line number5 index4 alt2">5</div>
+<div class="line number6 index5 alt1">6</div>
+<div class="line number7 index6 alt2">7</div>
+<div class="line number8 index7 alt1">8</div>
+<div class="line number9 index8 alt2">9</div>
+<div class="line number10 index9 alt1">10</div>
+<div class="line number11 index10 alt2">11</div>
+<div class="line number12 index11 alt1">12</div>
+<div class="line number13 index12 alt2">13</div>
+<div class="line number14 index13 alt1">14</div>
+<div class="line number15 index14 alt2">15</div>
+<div class="line number16 index15 alt1">16</div>
+<div class="line number17 index16 alt2">17</div>
+<div class="line number18 index17 alt1">18</div>
+<div class="line number19 index18 alt2">19</div>
+<div class="line number20 index19 alt1">20</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="py keyword">import</code> <code class="py plain">turtle</code></div>
+<div class="line number2 index1 alt1"> </div>
+<div class="line number3 index2 alt2"><code class="py keyword">def</code> <code class="py plain">draw_concentric_circles():</code></div>
+<div class="line number4 index3 alt1"><code class="py spaces">    </code><code class="py plain">turtle.speed(</code><code class="py value">0</code><code class="py plain">)  </code><code class="py comments"># 設定畫筆速度為最快</code></div>
+<div class="line number5 index4 alt2"><code class="py spaces">    </code><code class="py plain">turtle.penup()  </code><code class="py comments"># 抬起畫筆，以便移動到起始位置</code></div>
+<div class="line number6 index5 alt1"> </div>
+<div class="line number7 index6 alt2"><code class="py spaces">    </code><code class="py comments"># 設定圓的中心點</code></div>
+<div class="line number8 index7 alt1"><code class="py spaces">    </code><code class="py plain">turtle.goto(</code><code class="py value">0</code><code class="py plain">, </code><code class="py keyword">-</code><code class="py value">100</code><code class="py plain">)  </code><code class="py comments"># 移動到圓心位置，y 軸往下偏移</code></div>
+<div class="line number9 index8 alt2"> </div>
+<div class="line number10 index9 alt1"><code class="py spaces">    </code><code class="py comments"># 繪製10個同心圓，半徑從10到100，每次增加10</code></div>
+<div class="line number11 index10 alt2"><code class="py spaces">    </code><code class="py keyword">for</code> <code class="py plain">radius </code><code class="py keyword">in</code> <code class="py functions">range</code><code class="py plain">(</code><code class="py value">10</code><code class="py plain">, </code><code class="py value">101</code><code class="py plain">, </code><code class="py value">10</code><code class="py plain">):</code></div>
+<div class="line number12 index11 alt1"><code class="py spaces">        </code><code class="py plain">turtle.goto(</code><code class="py value">0</code><code class="py plain">, </code><code class="py keyword">-</code><code class="py plain">radius)  </code><code class="py comments"># 每次繪製圓之前，移動到新的圓心</code></div>
+<div class="line number13 index12 alt2"><code class="py spaces">        </code><code class="py plain">turtle.pendown()  </code><code class="py comments"># 放下畫筆開始繪製</code></div>
+<div class="line number14 index13 alt1"><code class="py spaces">        </code><code class="py plain">turtle.circle(radius)  </code><code class="py comments"># 繪製圓</code></div>
+<div class="line number15 index14 alt2"><code class="py spaces">        </code><code class="py plain">turtle.penup()  </code><code class="py comments"># 抬起畫筆，準備移動到下一個圓心</code></div>
+<div class="line number16 index15 alt1"> </div>
+<div class="line number17 index16 alt2"><code class="py spaces">    </code><code class="py plain">turtle.done()  </code><code class="py comments"># 完成繪圖</code></div>
+<div class="line number18 index17 alt1"> </div>
+<div class="line number19 index18 alt2"><code class="py comments"># 呼叫函數來繪製同心圓</code></div>
+<div class="line number20 index19 alt1"><code class="py plain">draw_concentric_circles()</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><br/><br/><br/></p>
+<p>棋盤格圖案：</p>
+<p>使用 for 迴圈和 if 條件，在畫布上繪製一個 8x8 的棋盤格圖案。每個格子為正方形，黑白相間。需要根據格子的行數和列數來決定格子的顏色。</p>
+<div>
+<div class="syntaxhighlighter py" id="highlighter_623919">
+<table border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+<div class="line number4 index3 alt1">4</div>
+<div class="line number5 index4 alt2">5</div>
+<div class="line number6 index5 alt1">6</div>
+<div class="line number7 index6 alt2">7</div>
+<div class="line number8 index7 alt1">8</div>
+<div class="line number9 index8 alt2">9</div>
+<div class="line number10 index9 alt1">10</div>
+<div class="line number11 index10 alt2">11</div>
+<div class="line number12 index11 alt1">12</div>
+<div class="line number13 index12 alt2">13</div>
+<div class="line number14 index13 alt1">14</div>
+<div class="line number15 index14 alt2">15</div>
+<div class="line number16 index15 alt1">16</div>
+<div class="line number17 index16 alt2">17</div>
+<div class="line number18 index17 alt1">18</div>
+<div class="line number19 index18 alt2">19</div>
+<div class="line number20 index19 alt1">20</div>
+<div class="line number21 index20 alt2">21</div>
+<div class="line number22 index21 alt1">22</div>
+<div class="line number23 index22 alt2">23</div>
+<div class="line number24 index23 alt1">24</div>
+<div class="line number25 index24 alt2">25</div>
+<div class="line number26 index25 alt1">26</div>
+<div class="line number27 index26 alt2">27</div>
+<div class="line number28 index27 alt1">28</div>
+<div class="line number29 index28 alt2">29</div>
+<div class="line number30 index29 alt1">30</div>
+<div class="line number31 index30 alt2">31</div>
+<div class="line number32 index31 alt1">32</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="py keyword">import</code> <code class="py plain">turtle</code></div>
+<div class="line number2 index1 alt1"> </div>
+<div class="line number3 index2 alt2"><code class="py keyword">def</code> <code class="py plain">draw_chessboard():</code></div>
+<div class="line number4 index3 alt1"><code class="py spaces">    </code><code class="py plain">turtle.speed(</code><code class="py value">0</code><code class="py plain">)  </code><code class="py comments"># 設定畫筆速度為最快</code></div>
+<div class="line number5 index4 alt2"><code class="py spaces">    </code><code class="py plain">turtle.penup()  </code><code class="py comments"># 抬起畫筆，以便移動到起始位置</code></div>
+<div class="line number6 index5 alt1"><code class="py spaces">    </code><code class="py plain">start_x </code><code class="py keyword">=</code> <code class="py keyword">-</code><code class="py value">200</code>  <code class="py comments"># 棋盤的起始 x 座標</code></div>
+<div class="line number7 index6 alt2"><code class="py spaces">    </code><code class="py plain">start_y </code><code class="py keyword">=</code> <code class="py value">200</code>  <code class="py comments"># 棋盤的起始 y 座標</code></div>
+<div class="line number8 index7 alt1"><code class="py spaces">    </code><code class="py plain">square_size </code><code class="py keyword">=</code> <code class="py value">50</code>  <code class="py comments"># 每個正方形的大小</code></div>
+<div class="line number9 index8 alt2"> </div>
+<div class="line number10 index9 alt1"><code class="py spaces">    </code><code class="py keyword">for</code> <code class="py plain">row </code><code class="py keyword">in</code> <code class="py functions">range</code><code class="py plain">(</code><code class="py value">8</code><code class="py plain">):  </code><code class="py comments"># 8 行</code></div>
+<div class="line number11 index10 alt2"><code class="py spaces">        </code><code class="py keyword">for</code> <code class="py plain">col </code><code class="py keyword">in</code> <code class="py functions">range</code><code class="py plain">(</code><code class="py value">8</code><code class="py plain">):  </code><code class="py comments"># 8 列</code></div>
+<div class="line number12 index11 alt1"><code class="py spaces">            </code><code class="py comments"># 計算每個格子的顏色，根據行列的總和判斷顏色</code></div>
+<div class="line number13 index12 alt2"><code class="py spaces">            </code><code class="py keyword">if</code> <code class="py plain">(row </code><code class="py keyword">+</code> <code class="py plain">col) </code><code class="py keyword">%</code> <code class="py value">2</code> <code class="py keyword">=</code><code class="py keyword">=</code> <code class="py value">0</code><code class="py plain">:</code></div>
+<div class="line number14 index13 alt1"><code class="py spaces">                </code><code class="py plain">turtle.color(</code><code class="py string">"white"</code><code class="py plain">)  </code><code class="py comments"># 白色</code></div>
+<div class="line number15 index14 alt2"><code class="py spaces">            </code><code class="py keyword">else</code><code class="py plain">:</code></div>
+<div class="line number16 index15 alt1"><code class="py spaces">                </code><code class="py plain">turtle.color(</code><code class="py string">"black"</code><code class="py plain">)  </code><code class="py comments"># 黑色</code></div>
+<div class="line number17 index16 alt2"> </div>
+<div class="line number18 index17 alt1"><code class="py spaces">            </code><code class="py comments"># 移動到當前格子的起始位置</code></div>
+<div class="line number19 index18 alt2"><code class="py spaces">            </code><code class="py plain">turtle.goto(start_x </code><code class="py keyword">+</code> <code class="py plain">col </code><code class="py keyword">*</code> <code class="py plain">square_size, start_y </code><code class="py keyword">-</code> <code class="py plain">row </code><code class="py keyword">*</code> <code class="py plain">square_size)</code></div>
+<div class="line number20 index19 alt1"><code class="py spaces">            </code><code class="py plain">turtle.pendown()  </code><code class="py comments"># 放下畫筆，開始繪製</code></div>
+<div class="line number21 index20 alt2"> </div>
+<div class="line number22 index21 alt1"><code class="py spaces">            </code><code class="py comments"># 繪製正方形</code></div>
+<div class="line number23 index22 alt2"><code class="py spaces">            </code><code class="py keyword">for</code> <code class="py plain">_ </code><code class="py keyword">in</code> <code class="py functions">range</code><code class="py plain">(</code><code class="py value">4</code><code class="py plain">):</code></div>
+<div class="line number24 index23 alt1"><code class="py spaces">                </code><code class="py plain">turtle.forward(square_size)  </code><code class="py comments"># 畫一條邊</code></div>
+<div class="line number25 index24 alt2"><code class="py spaces">                </code><code class="py plain">turtle.right(</code><code class="py value">90</code><code class="py plain">)  </code><code class="py comments"># 轉90度，畫下一條邊</code></div>
+<div class="line number26 index25 alt1"> </div>
+<div class="line number27 index26 alt2"><code class="py spaces">            </code><code class="py plain">turtle.penup()  </code><code class="py comments"># 抬起畫筆，準備畫下一個格子</code></div>
+<div class="line number28 index27 alt1"> </div>
+<div class="line number29 index28 alt2"><code class="py spaces">    </code><code class="py plain">turtle.done()  </code><code class="py comments"># 完成繪圖</code></div>
+<div class="line number30 index29 alt1"> </div>
+<div class="line number31 index30 alt2"><code class="py comments"># 呼叫函數來繪製棋盤格圖案</code></div>
+<div class="line number32 index31 alt1"><code class="py plain">draw_chessboard()</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><br/><br/><br/>螺旋線條：</p>
+<p>使用 for 迴圈和基本數列，在畫布上繪製一個螺旋線條。每次迴圈增加線條的長度和角度。例如，從中心點開始，每次畫一段直線，長度增加 5 像素，角度增加 10 度。</p>
+<div>
+<div class="syntaxhighlighter py" id="highlighter_624413">
+<table border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+<div class="line number4 index3 alt1">4</div>
+<div class="line number5 index4 alt2">5</div>
+<div class="line number6 index5 alt1">6</div>
+<div class="line number7 index6 alt2">7</div>
+<div class="line number8 index7 alt1">8</div>
+<div class="line number9 index8 alt2">9</div>
+<div class="line number10 index9 alt1">10</div>
+<div class="line number11 index10 alt2">11</div>
+<div class="line number12 index11 alt1">12</div>
+<div class="line number13 index12 alt2">13</div>
+<div class="line number14 index13 alt1">14</div>
+<div class="line number15 index14 alt2">15</div>
+<div class="line number16 index15 alt1">16</div>
+<div class="line number17 index16 alt2">17</div>
+<div class="line number18 index17 alt1">18</div>
+<div class="line number19 index18 alt2">19</div>
+<div class="line number20 index19 alt1">20</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="py keyword">import</code> <code class="py plain">turtle</code></div>
+<div class="line number2 index1 alt1"> </div>
+<div class="line number3 index2 alt2"><code class="py keyword">def</code> <code class="py plain">draw_spiral():</code></div>
+<div class="line number4 index3 alt1"><code class="py spaces">    </code><code class="py plain">turtle.speed(</code><code class="py value">0</code><code class="py plain">)  </code><code class="py comments"># 設定畫筆速度為最快</code></div>
+<div class="line number5 index4 alt2"><code class="py spaces">    </code><code class="py plain">turtle.penup()  </code><code class="py comments"># 抬起畫筆，移動到起始位置</code></div>
+<div class="line number6 index5 alt1"><code class="py spaces">    </code><code class="py plain">turtle.goto(</code><code class="py value">0</code><code class="py plain">, </code><code class="py value">0</code><code class="py plain">)  </code><code class="py comments"># 移動到畫布中心點</code></div>
+<div class="line number7 index6 alt2"><code class="py spaces">    </code><code class="py plain">turtle.pendown()  </code><code class="py comments"># 放下畫筆開始繪製</code></div>
+<div class="line number8 index7 alt1"> </div>
+<div class="line number9 index8 alt2"><code class="py spaces">    </code><code class="py plain">length </code><code class="py keyword">=</code> <code class="py value">5</code>  <code class="py comments"># 初始線條長度</code></div>
+<div class="line number10 index9 alt1"><code class="py spaces">    </code><code class="py plain">angle </code><code class="py keyword">=</code> <code class="py value">10</code>   <code class="py comments"># 每次旋轉的角度</code></div>
+<div class="line number11 index10 alt2"> </div>
+<div class="line number12 index11 alt1"><code class="py spaces">    </code><code class="py keyword">for</code> <code class="py plain">_ </code><code class="py keyword">in</code> <code class="py functions">range</code><code class="py plain">(</code><code class="py value">50</code><code class="py plain">):  </code><code class="py comments"># 繪製50次，形成螺旋線條</code></div>
+<div class="line number13 index12 alt2"><code class="py spaces">        </code><code class="py plain">turtle.forward(length)  </code><code class="py comments"># 繪製當前長度的線段</code></div>
+<div class="line number14 index13 alt1"><code class="py spaces">        </code><code class="py plain">turtle.right(angle)  </code><code class="py comments"># 旋轉指定的角度</code></div>
+<div class="line number15 index14 alt2"><code class="py spaces">        </code><code class="py plain">length </code><code class="py keyword">+</code><code class="py keyword">=</code> <code class="py value">5</code>  <code class="py comments"># 每次迴圈增加5像素的長度</code></div>
+<div class="line number16 index15 alt1"> </div>
+<div class="line number17 index16 alt2"><code class="py spaces">    </code><code class="py plain">turtle.done()  </code><code class="py comments"># 完成繪圖</code></div>
+<div class="line number18 index17 alt1"> </div>
+<div class="line number19 index18 alt2"><code class="py comments"># 呼叫函數來繪製螺旋線條</code></div>
+<div class="line number20 index19 alt1"><code class="py plain">draw_spiral()</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><br/><br/><br/>多邊形繪製：</p>
+<p>使用 for 迴圈和 if 條件，在畫布上繪製不同邊數的正多邊形（例如：三角形、正方形、五邊形等）。例如，繪製 3 到 10 邊的多邊形，每個多邊形的邊數隨著循環遞增。</p>
+<div>
+<div class="syntaxhighlighter py" id="highlighter_445997">
+<table border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+<div class="line number4 index3 alt1">4</div>
+<div class="line number5 index4 alt2">5</div>
+<div class="line number6 index5 alt1">6</div>
+<div class="line number7 index6 alt2">7</div>
+<div class="line number8 index7 alt1">8</div>
+<div class="line number9 index8 alt2">9</div>
+<div class="line number10 index9 alt1">10</div>
+<div class="line number11 index10 alt2">11</div>
+<div class="line number12 index11 alt1">12</div>
+<div class="line number13 index12 alt2">13</div>
+<div class="line number14 index13 alt1">14</div>
+<div class="line number15 index14 alt2">15</div>
+<div class="line number16 index15 alt1">16</div>
+<div class="line number17 index16 alt2">17</div>
+<div class="line number18 index17 alt1">18</div>
+<div class="line number19 index18 alt2">19</div>
+<div class="line number20 index19 alt1">20</div>
+<div class="line number21 index20 alt2">21</div>
+<div class="line number22 index21 alt1">22</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="py keyword">import</code> <code class="py plain">turtle</code></div>
+<div class="line number2 index1 alt1"> </div>
+<div class="line number3 index2 alt2"><code class="py keyword">def</code> <code class="py plain">draw_polygons():</code></div>
+<div class="line number4 index3 alt1"><code class="py spaces">    </code><code class="py plain">turtle.speed(</code><code class="py value">0</code><code class="py plain">)  </code><code class="py comments"># 設定畫筆速度為最快</code></div>
+<div class="line number5 index4 alt2"><code class="py spaces">    </code><code class="py plain">turtle.penup()  </code><code class="py comments"># 抬起畫筆，以便移動到起始位置</code></div>
+<div class="line number6 index5 alt1"><code class="py spaces">    </code><code class="py plain">turtle.goto(</code><code class="py keyword">-</code><code class="py value">150</code><code class="py plain">, </code><code class="py value">100</code><code class="py plain">)  </code><code class="py comments"># 設定起始位置</code></div>
+<div class="line number7 index6 alt2"> </div>
+<div class="line number8 index7 alt1"><code class="py spaces">    </code><code class="py keyword">for</code> <code class="py plain">sides </code><code class="py keyword">in</code> <code class="py functions">range</code><code class="py plain">(</code><code class="py value">3</code><code class="py plain">, </code><code class="py value">11</code><code class="py plain">):  </code><code class="py comments"># 從 3 邊到 10 邊</code></div>
+<div class="line number9 index8 alt2"><code class="py spaces">        </code><code class="py plain">turtle.pendown()  </code><code class="py comments"># 放下畫筆開始繪製</code></div>
+<div class="line number10 index9 alt1"><code class="py spaces">        </code><code class="py plain">angle </code><code class="py keyword">=</code> <code class="py value">360</code> <code class="py keyword">/</code> <code class="py plain">sides  </code><code class="py comments"># 計算每個角度（360° 除以邊數）</code></div>
+<div class="line number11 index10 alt2"><code class="py spaces">        </code> </div>
+<div class="line number12 index11 alt1"><code class="py spaces">        </code><code class="py keyword">for</code> <code class="py plain">_ </code><code class="py keyword">in</code> <code class="py functions">range</code><code class="py plain">(sides):  </code><code class="py comments"># 繪製每個多邊形的每一條邊</code></div>
+<div class="line number13 index12 alt2"><code class="py spaces">            </code><code class="py plain">turtle.forward(</code><code class="py value">100</code><code class="py plain">)  </code><code class="py comments"># 繪製邊長 100 單位</code></div>
+<div class="line number14 index13 alt1"><code class="py spaces">            </code><code class="py plain">turtle.left(angle)  </code><code class="py comments"># 旋轉至下一個角度</code></div>
+<div class="line number15 index14 alt2"> </div>
+<div class="line number16 index15 alt1"><code class="py spaces">        </code><code class="py plain">turtle.penup()  </code><code class="py comments"># 抬起畫筆，準備移動到下一個多邊形位置</code></div>
+<div class="line number17 index16 alt2"><code class="py spaces">        </code><code class="py plain">turtle.forward(</code><code class="py value">150</code><code class="py plain">)  </code><code class="py comments"># 移動到下一個多邊形的繪製位置</code></div>
+<div class="line number18 index17 alt1"> </div>
+<div class="line number19 index18 alt2"><code class="py spaces">    </code><code class="py plain">turtle.done()  </code><code class="py comments"># 完成繪圖</code></div>
+<div class="line number20 index19 alt1"> </div>
+<div class="line number21 index20 alt2"><code class="py comments"># 呼叫函數來繪製不同邊數的正多邊形</code></div>
+<div class="line number22 index21 alt1"><code class="py plain">draw_polygons()</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><br/><br/><br/>隨機顏色的圓形：</p>
+<p>使用 for 迴圈和 if 條件，在畫布上隨機位置繪製不同顏色的圓形。每次迴圈生成一個隨機的位置和顏色，並在該位置繪製一個圓形。</p>
+<div>
+<div class="syntaxhighlighter py" id="highlighter_837182">
+<table border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+<div class="line number4 index3 alt1">4</div>
+<div class="line number5 index4 alt2">5</div>
+<div class="line number6 index5 alt1">6</div>
+<div class="line number7 index6 alt2">7</div>
+<div class="line number8 index7 alt1">8</div>
+<div class="line number9 index8 alt2">9</div>
+<div class="line number10 index9 alt1">10</div>
+<div class="line number11 index10 alt2">11</div>
+<div class="line number12 index11 alt1">12</div>
+<div class="line number13 index12 alt2">13</div>
+<div class="line number14 index13 alt1">14</div>
+<div class="line number15 index14 alt2">15</div>
+<div class="line number16 index15 alt1">16</div>
+<div class="line number17 index16 alt2">17</div>
+<div class="line number18 index17 alt1">18</div>
+<div class="line number19 index18 alt2">19</div>
+<div class="line number20 index19 alt1">20</div>
+<div class="line number21 index20 alt2">21</div>
+<div class="line number22 index21 alt1">22</div>
+<div class="line number23 index22 alt2">23</div>
+<div class="line number24 index23 alt1">24</div>
+<div class="line number25 index24 alt2">25</div>
+<div class="line number26 index25 alt1">26</div>
+<div class="line number27 index26 alt2">27</div>
+<div class="line number28 index27 alt1">28</div>
+<div class="line number29 index28 alt2">29</div>
+<div class="line number30 index29 alt1">30</div>
+<div class="line number31 index30 alt2">31</div>
+<div class="line number32 index31 alt1">32</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="py keyword">import</code> <code class="py plain">turtle</code></div>
+<div class="line number2 index1 alt1"><code class="py keyword">import</code> <code class="py plain">random</code></div>
+<div class="line number3 index2 alt2"> </div>
+<div class="line number4 index3 alt1"><code class="py keyword">def</code> <code class="py plain">draw_random_circles():</code></div>
+<div class="line number5 index4 alt2"><code class="py spaces">    </code><code class="py plain">turtle.speed(</code><code class="py value">0</code><code class="py plain">)  </code><code class="py comments"># 設定畫筆速度為最快</code></div>
+<div class="line number6 index5 alt1"><code class="py spaces">    </code><code class="py plain">turtle.penup()  </code><code class="py comments"># 抬起畫筆</code></div>
+<div class="line number7 index6 alt2"> </div>
+<div class="line number8 index7 alt1"><code class="py spaces">    </code><code class="py plain">colors </code><code class="py keyword">=</code> <code class="py plain">[</code><code class="py string">"red"</code><code class="py plain">, </code><code class="py string">"green"</code><code class="py plain">, </code><code class="py string">"blue"</code><code class="py plain">, </code><code class="py string">"yellow"</code><code class="py plain">, </code><code class="py string">"purple"</code><code class="py plain">, </code><code class="py string">"orange"</code><code class="py plain">, </code><code class="py string">"pink"</code><code class="py plain">, </code><code class="py string">"cyan"</code><code class="py plain">, </code><code class="py string">"magenta"</code><code class="py plain">]  </code><code class="py comments"># 顏色列表</code></div>
+<div class="line number9 index8 alt2"> </div>
+<div class="line number10 index9 alt1"><code class="py spaces">    </code><code class="py keyword">for</code> <code class="py plain">_ </code><code class="py keyword">in</code> <code class="py functions">range</code><code class="py plain">(</code><code class="py value">20</code><code class="py plain">):  </code><code class="py comments"># 繪製 20 個圓形</code></div>
+<div class="line number11 index10 alt2"><code class="py spaces">        </code><code class="py comments"># 隨機選擇顏色</code></div>
+<div class="line number12 index11 alt1"><code class="py spaces">        </code><code class="py plain">color </code><code class="py keyword">=</code> <code class="py plain">random.choice(colors)</code></div>
+<div class="line number13 index12 alt2"><code class="py spaces">        </code><code class="py plain">turtle.color(color)</code></div>
+<div class="line number14 index13 alt1"> </div>
+<div class="line number15 index14 alt2"><code class="py spaces">        </code><code class="py comments"># 隨機選擇圓形的位置</code></div>
+<div class="line number16 index15 alt1"><code class="py spaces">        </code><code class="py plain">x </code><code class="py keyword">=</code> <code class="py plain">random.randint(</code><code class="py keyword">-</code><code class="py value">300</code><code class="py plain">, </code><code class="py value">300</code><code class="py plain">)</code></div>
+<div class="line number17 index16 alt2"><code class="py spaces">        </code><code class="py plain">y </code><code class="py keyword">=</code> <code class="py plain">random.randint(</code><code class="py keyword">-</code><code class="py value">300</code><code class="py plain">, </code><code class="py value">300</code><code class="py plain">)</code></div>
+<div class="line number18 index17 alt1"><code class="py spaces">        </code><code class="py plain">turtle.goto(x, y)</code></div>
+<div class="line number19 index18 alt2"> </div>
+<div class="line number20 index19 alt1"><code class="py spaces">        </code><code class="py plain">turtle.pendown()  </code><code class="py comments"># 放下畫筆開始繪製</code></div>
+<div class="line number21 index20 alt2"> </div>
+<div class="line number22 index21 alt1"><code class="py spaces">        </code><code class="py comments"># 繪製圓形，半徑 30 單位</code></div>
+<div class="line number23 index22 alt2"><code class="py spaces">        </code><code class="py plain">turtle.begin_fill()  </code><code class="py comments"># 開始填充顏色</code></div>
+<div class="line number24 index23 alt1"><code class="py spaces">        </code><code class="py plain">turtle.circle(</code><code class="py value">30</code><code class="py plain">)  </code><code class="py comments"># 繪製圓形，半徑 30</code></div>
+<div class="line number25 index24 alt2"><code class="py spaces">        </code><code class="py plain">turtle.end_fill()  </code><code class="py comments"># 結束填充顏色</code></div>
+<div class="line number26 index25 alt1"> </div>
+<div class="line number27 index26 alt2"><code class="py spaces">        </code><code class="py plain">turtle.penup()  </code><code class="py comments"># 抬起畫筆，準備繪製下一個圓形</code></div>
+<div class="line number28 index27 alt1"> </div>
+<div class="line number29 index28 alt2"><code class="py spaces">    </code><code class="py plain">turtle.done()  </code><code class="py comments"># 完成繪圖</code></div>
+<div class="line number30 index29 alt1"> </div>
+<div class="line number31 index30 alt2"><code class="py comments"># 呼叫函數來繪製隨機顏色的圓形</code></div>
+<div class="line number32 index31 alt1"><code class="py plain">draw_random_circles()</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><br/><br/><br/>雪花圖案：</p>
+<p>使用 for 迴圈和基本數列，在畫布上繪製一個簡單的雪花圖案。雪花的每個枝條對稱排列，例如從中心向外延伸的六條對稱直線。</p>
+<div>
+<div class="syntaxhighlighter py" id="highlighter_24419">
+<table border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+<div class="line number4 index3 alt1">4</div>
+<div class="line number5 index4 alt2">5</div>
+<div class="line number6 index5 alt1">6</div>
+<div class="line number7 index6 alt2">7</div>
+<div class="line number8 index7 alt1">8</div>
+<div class="line number9 index8 alt2">9</div>
+<div class="line number10 index9 alt1">10</div>
+<div class="line number11 index10 alt2">11</div>
+<div class="line number12 index11 alt1">12</div>
+<div class="line number13 index12 alt2">13</div>
+<div class="line number14 index13 alt1">14</div>
+<div class="line number15 index14 alt2">15</div>
+<div class="line number16 index15 alt1">16</div>
+<div class="line number17 index16 alt2">17</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="py keyword">import</code> <code class="py plain">turtle</code></div>
+<div class="line number2 index1 alt1"> </div>
+<div class="line number3 index2 alt2"><code class="py keyword">def</code> <code class="py plain">draw_snowflake():</code></div>
+<div class="line number4 index3 alt1"><code class="py spaces">    </code><code class="py plain">turtle.speed(</code><code class="py value">0</code><code class="py plain">)  </code><code class="py comments"># 設定畫筆速度為最快</code></div>
+<div class="line number5 index4 alt2"><code class="py spaces">    </code><code class="py plain">turtle.penup()  </code><code class="py comments"># 抬起畫筆</code></div>
+<div class="line number6 index5 alt1"><code class="py spaces">    </code><code class="py plain">turtle.goto(</code><code class="py value">0</code><code class="py plain">, </code><code class="py value">0</code><code class="py plain">)  </code><code class="py comments"># 移動到畫布中心</code></div>
+<div class="line number7 index6 alt2"><code class="py spaces">    </code><code class="py plain">turtle.pendown()  </code><code class="py comments"># 放下畫筆</code></div>
+<div class="line number8 index7 alt1"> </div>
+<div class="line number9 index8 alt2"><code class="py spaces">    </code><code class="py keyword">for</code> <code class="py plain">_ </code><code class="py keyword">in</code> <code class="py functions">range</code><code class="py plain">(</code><code class="py value">6</code><code class="py plain">):  </code><code class="py comments"># 繪製6條對稱的枝條</code></div>
+<div class="line number10 index9 alt1"><code class="py spaces">        </code><code class="py plain">turtle.forward(</code><code class="py value">100</code><code class="py plain">)  </code><code class="py comments"># 向前畫一條直線，長度為100</code></div>
+<div class="line number11 index10 alt2"><code class="py spaces">        </code><code class="py plain">turtle.backward(</code><code class="py value">100</code><code class="py plain">)  </code><code class="py comments"># 返回到中心</code></div>
+<div class="line number12 index11 alt1"><code class="py spaces">        </code><code class="py plain">turtle.left(</code><code class="py value">60</code><code class="py plain">)  </code><code class="py comments"># 旋轉60度，繪製下一條直線</code></div>
+<div class="line number13 index12 alt2"> </div>
+<div class="line number14 index13 alt1"><code class="py spaces">    </code><code class="py plain">turtle.done()  </code><code class="py comments"># 完成繪圖</code></div>
+<div class="line number15 index14 alt2"> </div>
+<div class="line number16 index15 alt1"><code class="py comments"># 呼叫函數來繪製雪花圖案</code></div>
+<div class="line number17 index16 alt2"><code class="py plain">draw_snowflake()</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><br/><br/><br/>旋轉方形：</p>
+<p>使用 for 迴圈和基本數列，在畫布上繪製一組旋轉的方形。每次迴圈方形的角度隨著循環增加，例如每次增加 15 度，並且每個方形中心相同。</p>
+<div>
+<div class="syntaxhighlighter py" id="highlighter_828462">
+<table border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+<div class="line number4 index3 alt1">4</div>
+<div class="line number5 index4 alt2">5</div>
+<div class="line number6 index5 alt1">6</div>
+<div class="line number7 index6 alt2">7</div>
+<div class="line number8 index7 alt1">8</div>
+<div class="line number9 index8 alt2">9</div>
+<div class="line number10 index9 alt1">10</div>
+<div class="line number11 index10 alt2">11</div>
+<div class="line number12 index11 alt1">12</div>
+<div class="line number13 index12 alt2">13</div>
+<div class="line number14 index13 alt1">14</div>
+<div class="line number15 index14 alt2">15</div>
+<div class="line number16 index15 alt1">16</div>
+<div class="line number17 index16 alt2">17</div>
+<div class="line number18 index17 alt1">18</div>
+<div class="line number19 index18 alt2">19</div>
+<div class="line number20 index19 alt1">20</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="py keyword">import</code> <code class="py plain">turtle</code></div>
+<div class="line number2 index1 alt1"> </div>
+<div class="line number3 index2 alt2"><code class="py keyword">def</code> <code class="py plain">draw_rotating_squares():</code></div>
+<div class="line number4 index3 alt1"><code class="py spaces">    </code><code class="py plain">turtle.speed(</code><code class="py value">0</code><code class="py plain">)  </code><code class="py comments"># 設定畫筆速度為最快</code></div>
+<div class="line number5 index4 alt2"><code class="py spaces">    </code><code class="py plain">turtle.penup()  </code><code class="py comments"># 抬起畫筆</code></div>
+<div class="line number6 index5 alt1"><code class="py spaces">    </code><code class="py plain">turtle.goto(</code><code class="py value">0</code><code class="py plain">, </code><code class="py value">0</code><code class="py plain">)  </code><code class="py comments"># 移動到畫布中心</code></div>
+<div class="line number7 index6 alt2"><code class="py spaces">    </code><code class="py plain">turtle.pendown()  </code><code class="py comments"># 放下畫筆</code></div>
+<div class="line number8 index7 alt1"> </div>
+<div class="line number9 index8 alt2"><code class="py spaces">    </code><code class="py keyword">for</code> <code class="py plain">angle </code><code class="py keyword">in</code> <code class="py functions">range</code><code class="py plain">(</code><code class="py value">0</code><code class="py plain">, </code><code class="py value">360</code><code class="py plain">, </code><code class="py value">15</code><code class="py plain">):  </code><code class="py comments"># 從 0 到 360，每次增加 15 度</code></div>
+<div class="line number10 index9 alt1"><code class="py spaces">        </code><code class="py plain">turtle.setheading(angle)  </code><code class="py comments"># 設定畫筆的朝向（角度）</code></div>
+<div class="line number11 index10 alt2"><code class="py spaces">        </code> </div>
+<div class="line number12 index11 alt1"><code class="py spaces">        </code><code class="py comments"># 繪製方形</code></div>
+<div class="line number13 index12 alt2"><code class="py spaces">        </code><code class="py keyword">for</code> <code class="py plain">_ </code><code class="py keyword">in</code> <code class="py functions">range</code><code class="py plain">(</code><code class="py value">4</code><code class="py plain">):  </code><code class="py comments"># 方形有四條邊</code></div>
+<div class="line number14 index13 alt1"><code class="py spaces">            </code><code class="py plain">turtle.forward(</code><code class="py value">100</code><code class="py plain">)  </code><code class="py comments"># 每條邊長度 100 單位</code></div>
+<div class="line number15 index14 alt2"><code class="py spaces">            </code><code class="py plain">turtle.left(</code><code class="py value">90</code><code class="py plain">)  </code><code class="py comments"># 轉 90 度，形成直角</code></div>
+<div class="line number16 index15 alt1"> </div>
+<div class="line number17 index16 alt2"><code class="py spaces">    </code><code class="py plain">turtle.done()  </code><code class="py comments"># 完成繪圖</code></div>
+<div class="line number18 index17 alt1"> </div>
+<div class="line number19 index18 alt2"><code class="py comments"># 呼叫函數來繪製旋轉的方形</code></div>
+<div class="line number20 index19 alt1"><code class="py plain">draw_rotating_squares()</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><br/><br/><br/>備註：漸變色矩形要使用IDE(<span>該環境不支持圖形界面</span>)</p>
+<p>使用 for 迴圈和基本數列，在畫布上繪製一組漸變色的矩形。每個矩形的顏色隨著循環變化，例如從紅色逐漸變為藍色。</p>
+<p><em><code>turtle.Screen()._colorstr</code><span> </span>這個方法是內部私有方法，不適合直接使用來獲取顏色的 RGB 值</em></p>
+<div>
+<div class="syntaxhighlighter py" id="highlighter_631971">
+<table border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+<div class="line number4 index3 alt1">4</div>
+<div class="line number5 index4 alt2">5</div>
+<div class="line number6 index5 alt1">6</div>
+<div class="line number7 index6 alt2">7</div>
+<div class="line number8 index7 alt1">8</div>
+<div class="line number9 index8 alt2">9</div>
+<div class="line number10 index9 alt1">10</div>
+<div class="line number11 index10 alt2">11</div>
+<div class="line number12 index11 alt1">12</div>
+<div class="line number13 index12 alt2">13</div>
+<div class="line number14 index13 alt1">14</div>
+<div class="line number15 index14 alt2">15</div>
+<div class="line number16 index15 alt1">16</div>
+<div class="line number17 index16 alt2">17</div>
+<div class="line number18 index17 alt1">18</div>
+<div class="line number19 index18 alt2">19</div>
+<div class="line number20 index19 alt1">20</div>
+<div class="line number21 index20 alt2">21</div>
+<div class="line number22 index21 alt1">22</div>
+<div class="line number23 index22 alt2">23</div>
+<div class="line number24 index23 alt1">24</div>
+<div class="line number25 index24 alt2">25</div>
+<div class="line number26 index25 alt1">26</div>
+<div class="line number27 index26 alt2">27</div>
+<div class="line number28 index27 alt1">28</div>
+<div class="line number29 index28 alt2">29</div>
+<div class="line number30 index29 alt1">30</div>
+<div class="line number31 index30 alt2">31</div>
+<div class="line number32 index31 alt1">32</div>
+<div class="line number33 index32 alt2">33</div>
+<div class="line number34 index33 alt1">34</div>
+<div class="line number35 index34 alt2">35</div>
+<div class="line number36 index35 alt1">36</div>
+<div class="line number37 index36 alt2">37</div>
+<div class="line number38 index37 alt1">38</div>
+<div class="line number39 index38 alt2">39</div>
+<div class="line number40 index39 alt1">40</div>
+<div class="line number41 index40 alt2">41</div>
+<div class="line number42 index41 alt1">42</div>
+<div class="line number43 index42 alt2">43</div>
+<div class="line number44 index43 alt1">44</div>
+<div class="line number45 index44 alt2">45</div>
+<div class="line number46 index45 alt1">46</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="py keyword">import</code> <code class="py plain">turtle</code></div>
+<div class="line number2 index1 alt1"> </div>
+<div class="line number3 index2 alt2"><code class="py comments"># 顏色漸變的計算函數</code></div>
+<div class="line number4 index3 alt1"><code class="py keyword">def</code> <code class="py plain">interpolate_color(start_color, end_color, factor):</code></div>
+<div class="line number5 index4 alt2"><code class="py spaces">    </code><code class="py comments"># 將顏色從字符串轉換為 RGB</code></div>
+<div class="line number6 index5 alt1"><code class="py spaces">    </code><code class="py plain">start_rgb </code><code class="py keyword">=</code> <code class="py plain">turtle.Screen()._colorstr(start_color)</code></div>
+<div class="line number7 index6 alt2"><code class="py spaces">    </code><code class="py plain">end_rgb </code><code class="py keyword">=</code> <code class="py plain">turtle.Screen()._colorstr(end_color)</code></div>
+<div class="line number8 index7 alt1"> </div>
+<div class="line number9 index8 alt2"><code class="py spaces">    </code><code class="py comments"># 計算漸變顏色</code></div>
+<div class="line number10 index9 alt1"><code class="py spaces">    </code><code class="py plain">r </code><code class="py keyword">=</code> <code class="py plain">start_rgb[</code><code class="py value">0</code><code class="py plain">] </code><code class="py keyword">+</code> <code class="py plain">factor </code><code class="py keyword">*</code> <code class="py plain">(end_rgb[</code><code class="py value">0</code><code class="py plain">] </code><code class="py keyword">-</code> <code class="py plain">start_rgb[</code><code class="py value">0</code><code class="py plain">])</code></div>
+<div class="line number11 index10 alt2"><code class="py spaces">    </code><code class="py plain">g </code><code class="py keyword">=</code> <code class="py plain">start_rgb[</code><code class="py value">1</code><code class="py plain">] </code><code class="py keyword">+</code> <code class="py plain">factor </code><code class="py keyword">*</code> <code class="py plain">(end_rgb[</code><code class="py value">1</code><code class="py plain">] </code><code class="py keyword">-</code> <code class="py plain">start_rgb[</code><code class="py value">1</code><code class="py plain">])</code></div>
+<div class="line number12 index11 alt1"><code class="py spaces">    </code><code class="py plain">b </code><code class="py keyword">=</code> <code class="py plain">start_rgb[</code><code class="py value">2</code><code class="py plain">] </code><code class="py keyword">+</code> <code class="py plain">factor </code><code class="py keyword">*</code> <code class="py plain">(end_rgb[</code><code class="py value">2</code><code class="py plain">] </code><code class="py keyword">-</code> <code class="py plain">start_rgb[</code><code class="py value">2</code><code class="py plain">])</code></div>
+<div class="line number13 index12 alt2"> </div>
+<div class="line number14 index13 alt1"><code class="py spaces">    </code><code class="py keyword">return</code> <code class="py plain">r, g, b</code></div>
+<div class="line number15 index14 alt2"> </div>
+<div class="line number16 index15 alt1"><code class="py keyword">def</code> <code class="py plain">draw_gradient_rectangles():</code></div>
+<div class="line number17 index16 alt2"><code class="py spaces">    </code><code class="py plain">turtle.speed(</code><code class="py value">0</code><code class="py plain">)  </code><code class="py comments"># 設定畫筆速度為最快</code></div>
+<div class="line number18 index17 alt1"><code class="py spaces">    </code><code class="py plain">turtle.penup()  </code><code class="py comments"># 抬起畫筆</code></div>
+<div class="line number19 index18 alt2"><code class="py spaces">    </code><code class="py plain">turtle.goto(</code><code class="py keyword">-</code><code class="py value">150</code><code class="py plain">, </code><code class="py value">0</code><code class="py plain">)  </code><code class="py comments"># 移動到起始位置</code></div>
+<div class="line number20 index19 alt1"><code class="py spaces">    </code><code class="py plain">turtle.pendown()  </code><code class="py comments"># 放下畫筆</code></div>
+<div class="line number21 index20 alt2"> </div>
+<div class="line number22 index21 alt1"><code class="py spaces">    </code><code class="py plain">start_color </code><code class="py keyword">=</code> <code class="py string">"red"</code>  <code class="py comments"># 起始顏色</code></div>
+<div class="line number23 index22 alt2"><code class="py spaces">    </code><code class="py plain">end_color </code><code class="py keyword">=</code> <code class="py string">"blue"</code>  <code class="py comments"># 結束顏色</code></div>
+<div class="line number24 index23 alt1"> </div>
+<div class="line number25 index24 alt2"><code class="py spaces">    </code><code class="py keyword">for</code> <code class="py plain">i </code><code class="py keyword">in</code> <code class="py functions">range</code><code class="py plain">(</code><code class="py value">10</code><code class="py plain">):  </code><code class="py comments"># 繪製 10 個矩形</code></div>
+<div class="line number26 index25 alt1"><code class="py spaces">        </code><code class="py comments"># 計算顏色漸變</code></div>
+<div class="line number27 index26 alt2"><code class="py spaces">        </code><code class="py plain">factor </code><code class="py keyword">=</code> <code class="py plain">i </code><code class="py keyword">/</code> <code class="py value">9</code>  <code class="py comments"># 計算漸變因子，從 0 到 1</code></div>
+<div class="line number28 index27 alt1"><code class="py spaces">        </code><code class="py plain">color </code><code class="py keyword">=</code> <code class="py plain">interpolate_color(start_color, end_color, factor)</code></div>
+<div class="line number29 index28 alt2"> </div>
+<div class="line number30 index29 alt1"><code class="py spaces">        </code><code class="py plain">turtle.color(color)  </code><code class="py comments"># 設定顏色</code></div>
+<div class="line number31 index30 alt2"> </div>
+<div class="line number32 index31 alt1"><code class="py spaces">        </code><code class="py comments"># 繪製矩形</code></div>
+<div class="line number33 index32 alt2"><code class="py spaces">        </code><code class="py keyword">for</code> <code class="py plain">_ </code><code class="py keyword">in</code> <code class="py functions">range</code><code class="py plain">(</code><code class="py value">2</code><code class="py plain">):</code></div>
+<div class="line number34 index33 alt1"><code class="py spaces">            </code><code class="py plain">turtle.forward(</code><code class="py value">100</code> <code class="py keyword">+</code> <code class="py plain">i </code><code class="py keyword">*</code> <code class="py value">10</code><code class="py plain">)  </code><code class="py comments"># 每次增加 10 像素的長度</code></div>
+<div class="line number35 index34 alt2"><code class="py spaces">            </code><code class="py plain">turtle.left(</code><code class="py value">90</code><code class="py plain">)</code></div>
+<div class="line number36 index35 alt1"><code class="py spaces">            </code><code class="py plain">turtle.forward(</code><code class="py value">50</code> <code class="py keyword">+</code> <code class="py plain">i </code><code class="py keyword">*</code> <code class="py value">5</code><code class="py plain">)  </code><code class="py comments"># 每次增加 5 像素的寬度</code></div>
+<div class="line number37 index36 alt2"><code class="py spaces">            </code><code class="py plain">turtle.left(</code><code class="py value">90</code><code class="py plain">)</code></div>
+<div class="line number38 index37 alt1"> </div>
+<div class="line number39 index38 alt2"><code class="py spaces">        </code><code class="py plain">turtle.penup()</code></div>
+<div class="line number40 index39 alt1"><code class="py spaces">        </code><code class="py plain">turtle.goto(</code><code class="py keyword">-</code><code class="py value">150</code> <code class="py keyword">+</code> <code class="py plain">(i </code><code class="py keyword">+</code> <code class="py value">1</code><code class="py plain">) </code><code class="py keyword">*</code> <code class="py value">10</code><code class="py plain">, </code><code class="py value">0</code><code class="py plain">)  </code><code class="py comments"># 移動到下一個位置</code></div>
+<div class="line number41 index40 alt2"><code class="py spaces">        </code><code class="py plain">turtle.pendown()</code></div>
+<div class="line number42 index41 alt1"> </div>
+<div class="line number43 index42 alt2"><code class="py spaces">    </code><code class="py plain">turtle.done()  </code><code class="py comments"># 完成繪圖</code></div>
+<div class="line number44 index43 alt1"> </div>
+<div class="line number45 index44 alt2"><code class="py comments"># 呼叫函數來繪製漸變色矩形</code></div>
+<div class="line number46 index45 alt1"><code class="py plain">draw_gradient_rectangles()</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>修正後程式：<br/><br/><br/>星星圖案：</p>
+<p>使用 for 迴圈和 if 條件，在畫布上繪製一組星星圖案。每次迴圈在隨機位置繪製一個五角星，星星的大小也可以隨機變化。</p>
+<div>
+<div class="syntaxhighlighter py" id="highlighter_169787">
+<table border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+<div class="line number4 index3 alt1">4</div>
+<div class="line number5 index4 alt2">5</div>
+<div class="line number6 index5 alt1">6</div>
+<div class="line number7 index6 alt2">7</div>
+<div class="line number8 index7 alt1">8</div>
+<div class="line number9 index8 alt2">9</div>
+<div class="line number10 index9 alt1">10</div>
+<div class="line number11 index10 alt2">11</div>
+<div class="line number12 index11 alt1">12</div>
+<div class="line number13 index12 alt2">13</div>
+<div class="line number14 index13 alt1">14</div>
+<div class="line number15 index14 alt2">15</div>
+<div class="line number16 index15 alt1">16</div>
+<div class="line number17 index16 alt2">17</div>
+<div class="line number18 index17 alt1">18</div>
+<div class="line number19 index18 alt2">19</div>
+<div class="line number20 index19 alt1">20</div>
+<div class="line number21 index20 alt2">21</div>
+<div class="line number22 index21 alt1">22</div>
+<div class="line number23 index22 alt2">23</div>
+<div class="line number24 index23 alt1">24</div>
+<div class="line number25 index24 alt2">25</div>
+<div class="line number26 index25 alt1">26</div>
+<div class="line number27 index26 alt2">27</div>
+<div class="line number28 index27 alt1">28</div>
+<div class="line number29 index28 alt2">29</div>
+<div class="line number30 index29 alt1">30</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="py keyword">import</code> <code class="py plain">turtle</code></div>
+<div class="line number2 index1 alt1"><code class="py keyword">import</code> <code class="py plain">random</code></div>
+<div class="line number3 index2 alt2"> </div>
+<div class="line number4 index3 alt1"><code class="py keyword">def</code> <code class="py plain">draw_star(x, y, size):</code></div>
+<div class="line number5 index4 alt2"><code class="py spaces">    </code><code class="py plain">turtle.penup()  </code><code class="py comments"># 抬起畫筆，準備移動到指定位置</code></div>
+<div class="line number6 index5 alt1"><code class="py spaces">    </code><code class="py plain">turtle.goto(x, y)  </code><code class="py comments"># 移動到指定位置</code></div>
+<div class="line number7 index6 alt2"><code class="py spaces">    </code><code class="py plain">turtle.pendown()  </code><code class="py comments"># 放下畫筆</code></div>
+<div class="line number8 index7 alt1"> </div>
+<div class="line number9 index8 alt2"><code class="py spaces">    </code><code class="py plain">turtle.begin_fill()  </code><code class="py comments"># 開始填充顏色</code></div>
+<div class="line number10 index9 alt1"> </div>
+<div class="line number11 index10 alt2"><code class="py spaces">    </code><code class="py keyword">for</code> <code class="py plain">_ </code><code class="py keyword">in</code> <code class="py functions">range</code><code class="py plain">(</code><code class="py value">5</code><code class="py plain">):  </code><code class="py comments"># 繪製五角星的五條邊</code></div>
+<div class="line number12 index11 alt1"><code class="py spaces">        </code><code class="py plain">turtle.forward(size)  </code><code class="py comments"># 向前畫一條邊</code></div>
+<div class="line number13 index12 alt2"><code class="py spaces">        </code><code class="py plain">turtle.right(</code><code class="py value">144</code><code class="py plain">)  </code><code class="py comments"># 轉動144度，繪製星星的角度</code></div>
+<div class="line number14 index13 alt1"> </div>
+<div class="line number15 index14 alt2"><code class="py spaces">    </code><code class="py plain">turtle.end_fill()  </code><code class="py comments"># 結束填充顏色</code></div>
+<div class="line number16 index15 alt1"> </div>
+<div class="line number17 index16 alt2"><code class="py keyword">def</code> <code class="py plain">draw_random_stars():</code></div>
+<div class="line number18 index17 alt1"><code class="py spaces">    </code><code class="py plain">turtle.speed(</code><code class="py value">0</code><code class="py plain">)  </code><code class="py comments"># 設定畫筆速度為最快</code></div>
+<div class="line number19 index18 alt2"><code class="py spaces">    </code><code class="py plain">turtle.bgcolor(</code><code class="py string">"black"</code><code class="py plain">)  </code><code class="py comments"># 設定背景為黑色，使星星顯得更加明顯</code></div>
+<div class="line number20 index19 alt1"> </div>
+<div class="line number21 index20 alt2"><code class="py spaces">    </code><code class="py keyword">for</code> <code class="py plain">_ </code><code class="py keyword">in</code> <code class="py functions">range</code><code class="py plain">(</code><code class="py value">20</code><code class="py plain">):  </code><code class="py comments"># 繪製 20 顆隨機位置和大小的星星</code></div>
+<div class="line number22 index21 alt1"><code class="py spaces">        </code><code class="py plain">x </code><code class="py keyword">=</code> <code class="py plain">random.randint(</code><code class="py keyword">-</code><code class="py value">300</code><code class="py plain">, </code><code class="py value">300</code><code class="py plain">)  </code><code class="py comments"># 隨機生成 x 坐標</code></div>
+<div class="line number23 index22 alt2"><code class="py spaces">        </code><code class="py plain">y </code><code class="py keyword">=</code> <code class="py plain">random.randint(</code><code class="py keyword">-</code><code class="py value">300</code><code class="py plain">, </code><code class="py value">300</code><code class="py plain">)  </code><code class="py comments"># 隨機生成 y 坐標</code></div>
+<div class="line number24 index23 alt1"><code class="py spaces">        </code><code class="py plain">size </code><code class="py keyword">=</code> <code class="py plain">random.randint(</code><code class="py value">10</code><code class="py plain">, </code><code class="py value">30</code><code class="py plain">)  </code><code class="py comments"># 隨機生成星星的大小</code></div>
+<div class="line number25 index24 alt2"><code class="py spaces">        </code><code class="py plain">draw_star(x, y, size)  </code><code class="py comments"># 在隨機位置繪製星星</code></div>
+<div class="line number26 index25 alt1"> </div>
+<div class="line number27 index26 alt2"><code class="py spaces">    </code><code class="py plain">turtle.done()  </code><code class="py comments"># 完成繪圖</code></div>
+<div class="line number28 index27 alt1"> </div>
+<div class="line number29 index28 alt2"><code class="py comments"># 呼叫函數來繪製星星圖案</code></div>
+<div class="line number30 index29 alt1"><code class="py plain">draw_random_stars()</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><br/><br/><br/>曼陀羅圖案：</p>
+<p>使用 for 迴圈和基本數列，在畫布上繪製一個簡單的曼陀羅圖案。曼陀羅圖案是一種對稱的幾何圖案，可以由多個同心圓和圓周上的線條組成，每個線條從中心點向外對稱分佈。</p>
+<div>
+<div class="syntaxhighlighter py" id="highlighter_358473">
+<table border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+<div class="line number4 index3 alt1">4</div>
+<div class="line number5 index4 alt2">5</div>
+<div class="line number6 index5 alt1">6</div>
+<div class="line number7 index6 alt2">7</div>
+<div class="line number8 index7 alt1">8</div>
+<div class="line number9 index8 alt2">9</div>
+<div class="line number10 index9 alt1">10</div>
+<div class="line number11 index10 alt2">11</div>
+<div class="line number12 index11 alt1">12</div>
+<div class="line number13 index12 alt2">13</div>
+<div class="line number14 index13 alt1">14</div>
+<div class="line number15 index14 alt2">15</div>
+<div class="line number16 index15 alt1">16</div>
+<div class="line number17 index16 alt2">17</div>
+<div class="line number18 index17 alt1">18</div>
+<div class="line number19 index18 alt2">19</div>
+<div class="line number20 index19 alt1">20</div>
+<div class="line number21 index20 alt2">21</div>
+<div class="line number22 index21 alt1">22</div>
+<div class="line number23 index22 alt2">23</div>
+<div class="line number24 index23 alt1">24</div>
+<div class="line number25 index24 alt2">25</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="py keyword">import</code> <code class="py plain">turtle</code></div>
+<div class="line number2 index1 alt1"> </div>
+<div class="line number3 index2 alt2"><code class="py keyword">def</code> <code class="py plain">draw_mandala():</code></div>
+<div class="line number4 index3 alt1"><code class="py spaces">    </code><code class="py plain">turtle.speed(</code><code class="py value">0</code><code class="py plain">)  </code><code class="py comments"># 設定畫筆速度為最快</code></div>
+<div class="line number5 index4 alt2"><code class="py spaces">    </code><code class="py plain">turtle.bgcolor(</code><code class="py string">"white"</code><code class="py plain">)  </code><code class="py comments"># 設定背景顏色為白色</code></div>
+<div class="line number6 index5 alt1"> </div>
+<div class="line number7 index6 alt2"><code class="py spaces">    </code><code class="py comments"># 繪製同心圓和圓周上的對稱線條</code></div>
+<div class="line number8 index7 alt1"><code class="py spaces">    </code><code class="py keyword">for</code> <code class="py plain">i </code><code class="py keyword">in</code> <code class="py functions">range</code><code class="py plain">(</code><code class="py value">6</code><code class="py plain">):  </code><code class="py comments"># 繪製六個同心圓</code></div>
+<div class="line number9 index8 alt2"><code class="py spaces">        </code><code class="py plain">turtle.penup()  </code><code class="py comments"># 抬起畫筆</code></div>
+<div class="line number10 index9 alt1"><code class="py spaces">        </code><code class="py plain">turtle.goto(</code><code class="py value">0</code><code class="py plain">, </code><code class="py keyword">-</code><code class="py value">20</code> <code class="py keyword">*</code> <code class="py plain">(i </code><code class="py keyword">+</code> <code class="py value">1</code><code class="py plain">))  </code><code class="py comments"># 每次將畫筆移到新的圓心位置</code></div>
+<div class="line number11 index10 alt2"><code class="py spaces">        </code><code class="py plain">turtle.pendown()  </code><code class="py comments"># 放下畫筆</code></div>
+<div class="line number12 index11 alt1"><code class="py spaces">        </code><code class="py plain">turtle.circle(</code><code class="py value">20</code> <code class="py keyword">*</code> <code class="py plain">(i </code><code class="py keyword">+</code> <code class="py value">1</code><code class="py plain">))  </code><code class="py comments"># 繪製圓，半徑隨著循環增大</code></div>
+<div class="line number13 index12 alt2"> </div>
+<div class="line number14 index13 alt1"><code class="py spaces">    </code><code class="py comments"># 繪製圓周上的對稱線條</code></div>
+<div class="line number15 index14 alt2"><code class="py spaces">    </code><code class="py keyword">for</code> <code class="py plain">i </code><code class="py keyword">in</code> <code class="py functions">range</code><code class="py plain">(</code><code class="py value">12</code><code class="py plain">):  </code><code class="py comments"># 繪製 12 條對稱線條</code></div>
+<div class="line number16 index15 alt1"><code class="py spaces">        </code><code class="py plain">turtle.penup()  </code><code class="py comments"># 抬起畫筆</code></div>
+<div class="line number17 index16 alt2"><code class="py spaces">        </code><code class="py plain">turtle.goto(</code><code class="py value">0</code><code class="py plain">, </code><code class="py value">0</code><code class="py plain">)  </code><code class="py comments"># 回到中心點</code></div>
+<div class="line number18 index17 alt1"><code class="py spaces">        </code><code class="py plain">turtle.setheading(i </code><code class="py keyword">*</code> <code class="py value">30</code><code class="py plain">)  </code><code class="py comments"># 設定角度，每次增加 30 度</code></div>
+<div class="line number19 index18 alt2"><code class="py spaces">        </code><code class="py plain">turtle.pendown()  </code><code class="py comments"># 放下畫筆</code></div>
+<div class="line number20 index19 alt1"><code class="py spaces">        </code><code class="py plain">turtle.forward(</code><code class="py value">200</code><code class="py plain">)  </code><code class="py comments"># 畫線條</code></div>
+<div class="line number21 index20 alt2"> </div>
+<div class="line number22 index21 alt1"><code class="py spaces">    </code><code class="py plain">turtle.done()  </code><code class="py comments"># 完成繪圖</code></div>
+<div class="line number23 index22 alt2"> </div>
+<div class="line number24 index23 alt1"><code class="py comments"># 呼叫函數來繪製曼陀羅圖案</code></div>
+<div class="line number25 index24 alt2"><code class="py plain">draw_mandala()</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<br />字母計數器 << <a href='字母計數器.html'>Previous</a> <a href='基礎Brython 繪圖.html'>Next</a> >> 基礎Brython 繪圖</div>
+        
+    <!-- footer -->
+      <div class="container">
+        <div class="row pt-3 mx-auto">
+            <p>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </p>
+        </div>
+      </div>
+    <!-- for footer -->
+    
+        </div> <!-- for site wrap -->
+            <!-- <script src="../cmsimde/static/chimper/js/jquery-3.3.1.min.js"></script> -->
+            <script src="../cmsimde/static/chimper/js/jquery-migrate-3.0.1.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery-ui.js"></script>
+            <script src="../cmsimde/static/chimper/js/popper.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/bootstrap.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/owl.carousel.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.stellar.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.countdown.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.magnific-popup.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/bootstrap-datepicker.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/aos.js"></script>
+            <!--
+            <script src="../cmsimde/static/chimper/js/typed.js"></script>
+                    <script>
+                    var typed = new Typed('.typed-words', {
+                    strings: ["Web Apps"," WordPress"," Mobile Apps"],
+                    typeSpeed: 80,
+                    backSpeed: 80,
+                    backDelay: 4000,
+                    startDelay: 1000,
+                    loop: true,
+                    showCursor: true
+                    });
+                    </script>
+            -->
+            <script src="../cmsimde/static/chimper/js/main.js"></script>
+        
+<!-- 啟用 LaTeX equations 編輯 -->
+  <!-- <script>
+  MathJax = {
+    tex: {inlineMath: [['$', '$'], ['\(', '\)']]}
+  };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>-->
+    </body></html>
+        

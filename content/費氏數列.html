@@ -1,0 +1,445 @@
+<!DOCTYPE html><html>
+        <head>
+        <title>cp_hw</title>
+        <meta charset="utf-8">
+<meta property="head" content="H2">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/magnific-popup.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/jquery-ui.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/owl.carousel.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/owl.theme.default.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap-datepicker.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/flaticon/font/flaticon.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/aos.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/style.css">
+        <link rel="shortcut icon" href="./../cmsimde/static/favicons.png">
+        
+        <style type='text/css'>
+            .site-section {
+            background-color: #FFFF;
+            padding: 40px 40px;
+            }
+            body > div > div.dropdown.open {
+                display: block;
+            }
+        </style>
+    
+        <!-- <script src="./../cmsimde/static/jquery.js"></script> -->
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+        <script src="../cmsimde/static/chimper/js/jquery-3.3.1.min.js"></script>
+        <link rel="stylesheet" href="./../cmsimde/static/tipuesearch/css/normalize.min.css">
+        <script src="./../cmsimde/static/tipuesearch/tipuesearch_set.js"></script>
+        <script src="tipuesearch_content.js"></script>
+        <link rel="stylesheet" href="./../cmsimde/static/tipuesearch/css/tipuesearch.css">
+        <script src="./../cmsimde/static/tipuesearch/tipuesearch.js"></script>
+        <!-- for Wink3 客製化關閉 -->
+        <!--
+        <link rel="stylesheet" type="text/css" href="./../cmsimde/static/winkPlayer.css" />
+        <script type="text/javascript" src="./../cmsimde/static/winkPlayer.js"></script>
+        -->
+        <script>
+            /* original tipuesearch
+            $(document).ready(function() {
+                 $('#tipue_search_input').tipuesearch();
+            });
+            */
+            // customed doSearch
+            function doSearch() {
+                $('#tipue_search_input').tipuesearch({
+                    newWindow: true, 
+                    minimumLength: 2,
+                    wholeWords: false, // for search 中文
+                });
+            }
+            $(document).ready(doSearch);
+        </script>
+        
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shCore.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushBash.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushDiff.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushJScript.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushJava.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPython.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushSql.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushHaxe.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushXml.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPhp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPowerShell.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushLua.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushMojo.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCpp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCss.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCSharp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushDart.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushRust.js"></script>
+<link type="text/css" rel="stylesheet" href="./../cmsimde/static/syntaxhighlighter/css/shCoreDefault.css"/>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+<!-- 暫時不用
+<script src="./../cmsimde/static/fengari-web.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/Cango-13v08-min.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/CangoAxes-4v01-min.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/gearUtils-05.js"></script>
+-->
+<!-- for Brython 暫時不用
+<script src="https://scrum-3.github.io/web/brython/brython.js"></script>
+<script src="https://scrum-3.github.io/web/brython/brython_stdlib.js"></script>
+-->
+<style>
+img.add_border {
+    border: 3px solid blue;
+}
+</style>
+
+</head>
+<body>
+<div class='container'><nav>
+        
+    <div class="site-wrap">
+
+    <div class="site-mobile-menu">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+    
+            <header class="site-navbar py-4 bg-white" role="banner">
+              <div class="container">
+                <div class="row align-items-center">
+                <h1>41323143 - cp2024 作業網站</h1>
+                <div class="pl-4">
+                    <form>
+                    <input type="text" placeholder="Search" name="q" id="tipue_search_input" pattern=".{2,}" title="At least 2 characters" required>
+                    </form>
+                </div>
+                  <!-- <div class="col-11 col-xl-2">
+                    <h1 class="mb-0 site-logo"><a href="index.html" class="text-black h2 mb-0">41323143 - cp2024 作業網站</a></h1> 
+                  </div>
+                  -->
+                  <div class="col-12 col-md-10 d-none d-xl-block">
+                    <nav class="site-navigation position-relative text-right" role="navigation">
+    <ul class='site-menu js-clone-nav mr-auto d-none d-lg-block'>
+                        <li class="active has-children"><a href="index.html">Home</a>
+                        <ul class="dropdown">
+                            <li><a href="sitemap.html">SMap</a></li>
+                            <li><a href="./../reveal/index.html">reveal</a></li>
+                            <li><a href="./../blog/index.html">blog</a></li>
+                        </ul>
+                      </li>
+                     <li><a href='About.html'>About</a><li><a href='Attendance.html'>Attendance</a><li class='has-children'><a href='HW 1.html'>HW 1</a><ul class='dropdown'><li class='has-children'><a href='HW 1 Exam.html'>HW 1 Exam</a><ul class='dropdown'><li><a href='w7.html'>w7</a><li><a href='w9.html'>w9</a><li><a href='w10.html'>w10</a><li><a href='w11_hw.html'>w11_hw</a><li><a href='w12_hw.html'>w12_hw</a><li><a href='w13_hw.html'>w13_hw</a><li><a href='w14_ex.html'>w14_ex</a><li><a href='w15.html'>w15</a></li></li></ul></ul><li class='has-children'><a href='HW 2.html'>HW 2</a><ul class='dropdown'><li class='has-children'><a href='HW 2 Exam.html'>HW 2 Exam</a><ul class='dropdown'><li><a href='w16_exam1.html'>w16_exam1</a></li></li></ul></ul><li class='has-children'><a href='HW 3.html'>HW 3</a><ul class='dropdown'><li class='has-children'><a href='HW 3 Exam.html'>HW 3 Exam</a><ul class='dropdown'><li><a href='w16_exam2.html'>w16_exam2</a></li></li></ul></ul><li class='has-children'><a href='HW 4.html'>HW 4</a><ul class='dropdown'><li class='has-children'><a href='HW 4 Exam.html'>HW 4 Exam</a><ul class='dropdown'><li><a href='w16_exam3.html'>w16_exam3</a></li></li></ul></ul><li class='has-children'><a href='Final Report.html'>Final Report</a><ul class='dropdown'><li><a href='簡單的數學計算器.html'>簡單的數學計算器</a><li><a href='反轉字串.html'>反轉字串</a><li><a href='費氏數列.html'>費氏數列</a><li><a href='清單排序.html'>清單排序</a><li><a href='字母計數器.html'>字母計數器</a><li><a href='進階Brython 繪圖.html'>進階Brython 繪圖</a><li><a href='基礎Brython 繪圖.html'>基礎Brython 繪圖</a></li></ul><li><a href='Brython.html'>Brython</a></li>
+                      </ul>
+                </nav>
+              </div>
+              <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
+              </div>
+
+            </div>
+          </div>
+          
+        </header>
+    <div id="tipue_search_content">反轉字串 << <a href='反轉字串.html'>Previous</a> <a href='清單排序.html'>Next</a> >> 清單排序<br /><h1>費氏數列</h1>
+<p>寫一個函數 `fibonacci`，接受一個整數 `n`，並返回長度為 `n` 的費氏數列。例如：`fibonacci(5)` 應返回 `[0, 1, 1, 2, 3]`。</p>
+<div>
+<div class="syntaxhighlighter py" id="highlighter_632310">
+<table border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+<div class="line number4 index3 alt1">4</div>
+<div class="line number5 index4 alt2">5</div>
+<div class="line number6 index5 alt1">6</div>
+<div class="line number7 index6 alt2">7</div>
+<div class="line number8 index7 alt1">8</div>
+<div class="line number9 index8 alt2">9</div>
+<div class="line number10 index9 alt1">10</div>
+<div class="line number11 index10 alt2">11</div>
+<div class="line number12 index11 alt1">12</div>
+<div class="line number13 index12 alt2">13</div>
+<div class="line number14 index13 alt1">14</div>
+<div class="line number15 index14 alt2">15</div>
+<div class="line number16 index15 alt1">16</div>
+<div class="line number17 index16 alt2">17</div>
+<div class="line number18 index17 alt1">18</div>
+<div class="line number19 index18 alt2">19</div>
+<div class="line number20 index19 alt1">20</div>
+<div class="line number21 index20 alt2">21</div>
+<div class="line number22 index21 alt1">22</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="py keyword">def</code> <code class="py plain">fibonacci(n):</code></div>
+<div class="line number2 index1 alt1"><code class="py spaces">    </code><code class="py comments"># 初始化費氏數列，前兩個數字是 0 和 1</code></div>
+<div class="line number3 index2 alt2"><code class="py spaces">    </code><code class="py plain">fib_sequence </code><code class="py keyword">=</code> <code class="py plain">[</code><code class="py value">0</code><code class="py plain">, </code><code class="py value">1</code><code class="py plain">]</code></div>
+<div class="line number4 index3 alt1"><code class="py spaces">    </code> </div>
+<div class="line number5 index4 alt2"><code class="py spaces">    </code><code class="py comments"># 如果 n 是 1，則只返回 [0]</code></div>
+<div class="line number6 index5 alt1"><code class="py spaces">    </code><code class="py keyword">if</code> <code class="py plain">n </code><code class="py keyword">=</code><code class="py keyword">=</code> <code class="py value">1</code><code class="py plain">:</code></div>
+<div class="line number7 index6 alt2"><code class="py spaces">        </code><code class="py keyword">return</code> <code class="py plain">[</code><code class="py value">0</code><code class="py plain">]</code></div>
+<div class="line number8 index7 alt1"><code class="py spaces">    </code> </div>
+<div class="line number9 index8 alt2"><code class="py spaces">    </code><code class="py comments"># 如果 n 是 2，則返回 [0, 1]</code></div>
+<div class="line number10 index9 alt1"><code class="py spaces">    </code><code class="py keyword">if</code> <code class="py plain">n </code><code class="py keyword">=</code><code class="py keyword">=</code> <code class="py value">2</code><code class="py plain">:</code></div>
+<div class="line number11 index10 alt2"><code class="py spaces">        </code><code class="py keyword">return</code> <code class="py plain">fib_sequence</code></div>
+<div class="line number12 index11 alt1"><code class="py spaces">    </code> </div>
+<div class="line number13 index12 alt2"><code class="py spaces">    </code><code class="py comments"># 使用迴圈生成剩餘的費氏數字</code></div>
+<div class="line number14 index13 alt1"><code class="py spaces">    </code><code class="py keyword">for</code> <code class="py plain">i </code><code class="py keyword">in</code> <code class="py functions">range</code><code class="py plain">(</code><code class="py value">2</code><code class="py plain">, n):</code></div>
+<div class="line number15 index14 alt2"><code class="py spaces">        </code><code class="py plain">next_fib </code><code class="py keyword">=</code> <code class="py plain">fib_sequence[</code><code class="py keyword">-</code><code class="py value">1</code><code class="py plain">] </code><code class="py keyword">+</code> <code class="py plain">fib_sequence[</code><code class="py keyword">-</code><code class="py value">2</code><code class="py plain">]  </code><code class="py comments"># 計算下個費氏數字</code></div>
+<div class="line number16 index15 alt1"><code class="py spaces">        </code><code class="py plain">fib_sequence.append(next_fib)  </code><code class="py comments"># 將數字加入數列</code></div>
+<div class="line number17 index16 alt2"><code class="py spaces">    </code> </div>
+<div class="line number18 index17 alt1"><code class="py spaces">    </code><code class="py keyword">return</code> <code class="py plain">fib_sequence</code></div>
+<div class="line number19 index18 alt2"> </div>
+<div class="line number20 index19 alt1"><code class="py comments"># 測試函數</code></div>
+<div class="line number21 index20 alt2"><code class="py plain">result </code><code class="py keyword">=</code> <code class="py plain">fibonacci(</code><code class="py value">5</code><code class="py plain">)</code></div>
+<div class="line number22 index21 alt1"><code class="py functions">print</code><code class="py plain">(result)  </code><code class="py comments"># 輸出: [0, 1, 1, 2, 3]</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>階乘計算： 寫一個函數 factorial，接受一個整數 n，並返回 n 的階乘。例如：factorial(5) 應返回 120。</p>
+<div>
+<div class="syntaxhighlighter py" id="highlighter_99156">
+<table border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+<div class="line number4 index3 alt1">4</div>
+<div class="line number5 index4 alt2">5</div>
+<div class="line number6 index5 alt1">6</div>
+<div class="line number7 index6 alt2">7</div>
+<div class="line number8 index7 alt1">8</div>
+<div class="line number9 index8 alt2">9</div>
+<div class="line number10 index9 alt1">10</div>
+<div class="line number11 index10 alt2">11</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="py keyword">def</code> <code class="py plain">factorial(n):</code></div>
+<div class="line number2 index1 alt1"><code class="py spaces">    </code><code class="py comments"># 初始階乘值為 1</code></div>
+<div class="line number3 index2 alt2"><code class="py spaces">    </code><code class="py plain">result </code><code class="py keyword">=</code> <code class="py value">1</code></div>
+<div class="line number4 index3 alt1"><code class="py spaces">    </code><code class="py comments"># 使用 for 迴圈計算階乘</code></div>
+<div class="line number5 index4 alt2"><code class="py spaces">    </code><code class="py keyword">for</code> <code class="py plain">i </code><code class="py keyword">in</code> <code class="py functions">range</code><code class="py plain">(</code><code class="py value">1</code><code class="py plain">, n </code><code class="py keyword">+</code> <code class="py value">1</code><code class="py plain">):</code></div>
+<div class="line number6 index5 alt1"><code class="py spaces">        </code><code class="py plain">result </code><code class="py keyword">*</code><code class="py keyword">=</code> <code class="py plain">i  </code><code class="py comments"># 將當前數字乘到結果中</code></div>
+<div class="line number7 index6 alt2"><code class="py spaces">    </code><code class="py keyword">return</code> <code class="py plain">result</code></div>
+<div class="line number8 index7 alt1"> </div>
+<div class="line number9 index8 alt2"><code class="py comments"># 測試函數</code></div>
+<div class="line number10 index9 alt1"><code class="py plain">result </code><code class="py keyword">=</code> <code class="py plain">factorial(</code><code class="py value">5</code><code class="py plain">)</code></div>
+<div class="line number11 index10 alt2"><code class="py functions">print</code><code class="py plain">(result)  </code><code class="py comments"># 輸出: 120</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><br/><br/><br/>最小公倍數： 寫一個函數 lcm，接受兩個整數 a 和 b，並返回它們的最小公倍數。例如：lcm(6, 8) 應返回 24。</p>
+<div>
+<div class="syntaxhighlighter py" id="highlighter_277457">
+<table border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+<div class="line number4 index3 alt1">4</div>
+<div class="line number5 index4 alt2">5</div>
+<div class="line number6 index5 alt1">6</div>
+<div class="line number7 index6 alt2">7</div>
+<div class="line number8 index7 alt1">8</div>
+<div class="line number9 index8 alt2">9</div>
+<div class="line number10 index9 alt1">10</div>
+<div class="line number11 index10 alt2">11</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="py keyword">import</code> <code class="py plain">math</code></div>
+<div class="line number2 index1 alt1"> </div>
+<div class="line number3 index2 alt2"><code class="py keyword">def</code> <code class="py plain">lcm(a, b):</code></div>
+<div class="line number4 index3 alt1"><code class="py spaces">    </code><code class="py comments"># 計算最大公因數（GCD）</code></div>
+<div class="line number5 index4 alt2"><code class="py spaces">    </code><code class="py plain">gcd </code><code class="py keyword">=</code> <code class="py plain">math.gcd(a, b)</code></div>
+<div class="line number6 index5 alt1"><code class="py spaces">    </code><code class="py comments"># 計算最小公倍數（LCM）</code></div>
+<div class="line number7 index6 alt2"><code class="py spaces">    </code><code class="py keyword">return</code> <code class="py functions">abs</code><code class="py plain">(a </code><code class="py keyword">*</code> <code class="py plain">b) </code><code class="py keyword">/</code><code class="py keyword">/</code> <code class="py plain">gcd</code></div>
+<div class="line number8 index7 alt1"> </div>
+<div class="line number9 index8 alt2"><code class="py comments"># 測試函數</code></div>
+<div class="line number10 index9 alt1"><code class="py plain">result </code><code class="py keyword">=</code> <code class="py plain">lcm(</code><code class="py value">6</code><code class="py plain">, </code><code class="py value">8</code><code class="py plain">)</code></div>
+<div class="line number11 index10 alt2"><code class="py functions">print</code><code class="py plain">(result)  </code><code class="py comments"># 輸出: 24</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><br/><br/><br/>最大公因數： 寫一個函數 gcd，接受兩個整數 a 和 b，並返回它們的最大公因數。例如：gcd(48, 18) 應返回 6。</p>
+<div>
+<div class="syntaxhighlighter py" id="highlighter_490562">
+<table border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+<div class="line number4 index3 alt1">4</div>
+<div class="line number5 index4 alt2">5</div>
+<div class="line number6 index5 alt1">6</div>
+<div class="line number7 index6 alt2">7</div>
+<div class="line number8 index7 alt1">8</div>
+<div class="line number9 index8 alt2">9</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="py keyword">def</code> <code class="py plain">gcd(a, b):</code></div>
+<div class="line number2 index1 alt1"><code class="py spaces">    </code><code class="py comments"># 使用歐幾里得算法計算最大公因數</code></div>
+<div class="line number3 index2 alt2"><code class="py spaces">    </code><code class="py keyword">while</code> <code class="py plain">b !</code><code class="py keyword">=</code> <code class="py value">0</code><code class="py plain">:</code></div>
+<div class="line number4 index3 alt1"><code class="py spaces">        </code><code class="py plain">a, b </code><code class="py keyword">=</code> <code class="py plain">b, a </code><code class="py keyword">%</code> <code class="py plain">b  </code><code class="py comments"># 將 a 更新為 b，b 更新為 a 除以 b 的餘數</code></div>
+<div class="line number5 index4 alt2"><code class="py spaces">    </code><code class="py keyword">return</code> <code class="py plain">a</code></div>
+<div class="line number6 index5 alt1"> </div>
+<div class="line number7 index6 alt2"><code class="py comments"># 測試函數</code></div>
+<div class="line number8 index7 alt1"><code class="py plain">result </code><code class="py keyword">=</code> <code class="py plain">gcd(</code><code class="py value">48</code><code class="py plain">, </code><code class="py value">18</code><code class="py plain">)</code></div>
+<div class="line number9 index8 alt2"><code class="py functions">print</code><code class="py plain">(result)  </code><code class="py comments"># 輸出: 6</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><br/><br/><br/>階乘和： 寫一個函數 sum_of_factorials，接受一個整數 n，並返回從 1 到 n 的所有整數的階乘和。例如：sum_of_factorials(3) 應返回 9（1! + 2! + 3! = 1 + 2 + 6）。</p>
+<div>
+<div class="syntaxhighlighter py" id="highlighter_750684">
+<table border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+<div class="line number4 index3 alt1">4</div>
+<div class="line number5 index4 alt2">5</div>
+<div class="line number6 index5 alt1">6</div>
+<div class="line number7 index6 alt2">7</div>
+<div class="line number8 index7 alt1">8</div>
+<div class="line number9 index8 alt2">9</div>
+<div class="line number10 index9 alt1">10</div>
+<div class="line number11 index10 alt2">11</div>
+<div class="line number12 index11 alt1">12</div>
+<div class="line number13 index12 alt2">13</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="py keyword">import</code> <code class="py plain">math</code></div>
+<div class="line number2 index1 alt1"> </div>
+<div class="line number3 index2 alt2"><code class="py keyword">def</code> <code class="py plain">sum_of_factorials(n):</code></div>
+<div class="line number4 index3 alt1"><code class="py spaces">    </code><code class="py comments"># 初始化總和為 0</code></div>
+<div class="line number5 index4 alt2"><code class="py spaces">    </code><code class="py plain">total_sum </code><code class="py keyword">=</code> <code class="py value">0</code></div>
+<div class="line number6 index5 alt1"><code class="py spaces">    </code><code class="py comments"># 計算從 1 到 n 的所有階乘並累加</code></div>
+<div class="line number7 index6 alt2"><code class="py spaces">    </code><code class="py keyword">for</code> <code class="py plain">i </code><code class="py keyword">in</code> <code class="py functions">range</code><code class="py plain">(</code><code class="py value">1</code><code class="py plain">, n </code><code class="py keyword">+</code> <code class="py value">1</code><code class="py plain">):</code></div>
+<div class="line number8 index7 alt1"><code class="py spaces">        </code><code class="py plain">total_sum </code><code class="py keyword">+</code><code class="py keyword">=</code> <code class="py plain">math.factorial(i)  </code><code class="py comments"># 計算 i 的階乘並累加</code></div>
+<div class="line number9 index8 alt2"><code class="py spaces">    </code><code class="py keyword">return</code> <code class="py plain">total_sum</code></div>
+<div class="line number10 index9 alt1"> </div>
+<div class="line number11 index10 alt2"><code class="py comments"># 測試函數</code></div>
+<div class="line number12 index11 alt1"><code class="py plain">result </code><code class="py keyword">=</code> <code class="py plain">sum_of_factorials(</code><code class="py value">3</code><code class="py plain">)</code></div>
+<div class="line number13 index12 alt2"><code class="py functions">print</code><code class="py plain">(result)  </code><code class="py comments"># 輸出: 9 (1! + 2! + 3! = 1 + 2 + 6)</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><br/><br/><br/>二項式係數： 寫一個函數 binomial_coefficient，接受兩個整數 n 和 k，並返回二項式係數 "n 選 k"（n choose k）。例如：binomial_coefficient(5, 2) 應返回 10。</p>
+<div>
+<div class="syntaxhighlighter py" id="highlighter_315065">
+<table border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+<div class="line number4 index3 alt1">4</div>
+<div class="line number5 index4 alt2">5</div>
+<div class="line number6 index5 alt1">6</div>
+<div class="line number7 index6 alt2">7</div>
+<div class="line number8 index7 alt1">8</div>
+<div class="line number9 index8 alt2">9</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="py keyword">import</code> <code class="py plain">math</code></div>
+<div class="line number2 index1 alt1"> </div>
+<div class="line number3 index2 alt2"><code class="py keyword">def</code> <code class="py plain">binomial_coefficient(n, k):</code></div>
+<div class="line number4 index3 alt1"><code class="py spaces">    </code><code class="py comments"># 使用二項式係數公式 C(n, k) = n! / (k! * (n-k)!)</code></div>
+<div class="line number5 index4 alt2"><code class="py spaces">    </code><code class="py keyword">return</code> <code class="py plain">math.factorial(n) </code><code class="py keyword">/</code><code class="py keyword">/</code> <code class="py plain">(math.factorial(k) </code><code class="py keyword">*</code> <code class="py plain">math.factorial(n </code><code class="py keyword">-</code> <code class="py plain">k))</code></div>
+<div class="line number6 index5 alt1"> </div>
+<div class="line number7 index6 alt2"><code class="py comments"># 測試函數</code></div>
+<div class="line number8 index7 alt1"><code class="py plain">result </code><code class="py keyword">=</code> <code class="py plain">binomial_coefficient(</code><code class="py value">5</code><code class="py plain">, </code><code class="py value">2</code><code class="py plain">)</code></div>
+<div class="line number9 index8 alt2"><code class="py functions">print</code><code class="py plain">(result)  </code><code class="py comments"># 輸出: 10</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<br />反轉字串 << <a href='反轉字串.html'>Previous</a> <a href='清單排序.html'>Next</a> >> 清單排序</div>
+        
+    <!-- footer -->
+      <div class="container">
+        <div class="row pt-3 mx-auto">
+            <p>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </p>
+        </div>
+      </div>
+    <!-- for footer -->
+    
+        </div> <!-- for site wrap -->
+            <!-- <script src="../cmsimde/static/chimper/js/jquery-3.3.1.min.js"></script> -->
+            <script src="../cmsimde/static/chimper/js/jquery-migrate-3.0.1.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery-ui.js"></script>
+            <script src="../cmsimde/static/chimper/js/popper.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/bootstrap.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/owl.carousel.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.stellar.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.countdown.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.magnific-popup.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/bootstrap-datepicker.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/aos.js"></script>
+            <!--
+            <script src="../cmsimde/static/chimper/js/typed.js"></script>
+                    <script>
+                    var typed = new Typed('.typed-words', {
+                    strings: ["Web Apps"," WordPress"," Mobile Apps"],
+                    typeSpeed: 80,
+                    backSpeed: 80,
+                    backDelay: 4000,
+                    startDelay: 1000,
+                    loop: true,
+                    showCursor: true
+                    });
+                    </script>
+            -->
+            <script src="../cmsimde/static/chimper/js/main.js"></script>
+        
+<!-- 啟用 LaTeX equations 編輯 -->
+  <!-- <script>
+  MathJax = {
+    tex: {inlineMath: [['$', '$'], ['\(', '\)']]}
+  };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>-->
+    </body></html>
+        
